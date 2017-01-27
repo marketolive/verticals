@@ -25,7 +25,7 @@ pages = ['base','cleanbase','custombase','travel','healthcare','technology','man
 		'Marketing-in-Higher-Ed-How-to-Improve-Your-Grades','Higher-Education-A-Changing-World-for-Marketers','How-Digital-Marketing-is-Reshaping-Financial-Services',
 		'Digital-Marketing-Trends','Role_of_Banks_In_Our_Economy','Digital-Marketing-Trends',
 		'Cross-Sell-to-Your-Customers','The-Rise-of-Digital-Marketing-in-Financial-Services',
-		'mktodemoaccount317']
+		'mktodemoaccount317','mktodemoaccount201']
 
 
 
@@ -85,3 +85,8 @@ def main_route(page):
 @app.route('/mktodemoaccount317')
 def serve_custom317():
 	return send_from_directory(os.path.join(app_dir, 'templates', 'custompages'), 'mktodemoaccount317.html')
+
+@app.route('/mktodemoaccount201')
+def serve_custom201():
+	return send_from_directory(os.path.join(app_dir, 'templates', 'custompages'), 'mktodemoaccount201.html')
+
