@@ -57,11 +57,11 @@
           g.src = f + '?aid=' + i;
           var b = h.getElementsByTagName("script")[0];
           b.parentNode.insertBefore(g, b);
+          console.log("Web Personalization Tag Loaded");
       })(window, document, "rtp", "//sjrtp1.marketo.com/rtp-api/v1/rtp.js", "marketodemoaccount106");
       
       rtp('send', 'view');
       rtp('get', 'campaign', true);
-      console.log("Web Personalization Tag Loaded");
     </script>
 
     {% block head %}

@@ -58,9 +58,11 @@ if (getUrlParam("click") == "true") {
                 }
                 
                 console.log("Click Predictive Links > Updated Link (" + linkIndex + "): " + document.getElementsByClassName(itemClassName)[linkIndex].getElementsByClassName(linkClassName)[0].href);
+                document.getElementsByClassName(itemClassName)[linkIndex].getElementsByClassName(linkClassName)[0].click();
             } else if (parseInt((currTime - startTime) / 1000) > 3) {
                 console.log("Click Predictive Links > Content IS NOT Available");
                 window.clearInterval(predictiveContentIsReady);
+                window.close();
             }
         }, 0);
 } else {
