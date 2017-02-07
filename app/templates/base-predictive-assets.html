@@ -4,19 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Turner Inc</title>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-    
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    
-    <!-- Base CSS -->
-    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <title>Predictive Assets</title>
     
     <!-- Marketo Munchkin Tag -->
     <script type="text/javascript">
@@ -25,7 +13,7 @@
           function initMunchkin() {
               if (didInit === false) {
                   didInit = true;
-                  Munchkin.init('026-COU-482');
+                  Munchkin.init('185-NGX-811');
               }
           }
           var s = document.createElement('script');
@@ -42,7 +30,7 @@
           console.log("Munchkin Tag Loaded");
       })();
     </script>
-
+    
     <!-- Web Personalization Tag -->
     <script type="text/javascript">
       (function (c, h, a, f, i, e) {
@@ -58,62 +46,38 @@
           var b = h.getElementsByTagName("script")[0];
           b.parentNode.insertBefore(g, b);
           console.log("Web Personalization Tag Loaded");
-      })(window, document, "rtp", "//sjrtp1.marketo.com/rtp-api/v1/rtp.js", "marketodemoaccount106");
-      
+      })(window, document, "rtp", "//sjrtp3-cdn.marketo.com/rtp-api/v1/rtp.js", "mktodemolivemaster");
       rtp('send', 'view');
       rtp('get', 'campaign', true);
     </script>
-
-    {% block head %}
-    <!-- Custom Head Content -->
-    {% endblock %}
   </head>
   
   <body>
-    <!-- Navbar -->
-    {% block navbar %}
-    <!-- Custom Navbar Content -->
-    {% endblock %}
-    <!--/.Navbar-->
-
-    {% block carousel_content %}
-    <!-- Custom Carousel Content -->
-    {% endblock %}
-    
-    <br>
-    
     {% block page_content %}
     <!-- Custom Page Content -->
     {% endblock %}
-    
-    <!--Footer-->
-    <footer class="page-footer center-on-small-only">
+    <script src="//app-sjdemo1.marketo.com/js/forms2/js/forms2.min.js"></script>
+    <form id="mktoForm_1174"></form>
+    <script>
+      var URL_PATH = "m3-dev",
+      MARKETO_LIVE_LANDING_PAGE_SCRIPT_LOCATION = "https://marketolive.com/" + URL_PATH + "/pluginv3/marketo-live-landing-page.min.js",
+      loadScript,
+      form;
       
-      <!--Footer Links-->
-      <div class="container-fluid"></div>
-      <!--/.Footer Links-->
+      loadScript = function (scriptSrc) {
+          console.log("Global Landing Page > Loading: Script: " + scriptSrc);
+          
+          var scriptElement = document.createElement("script");
+          scriptElement.async = true;
+          scriptElement.src = scriptSrc;
+          document.getElementsByTagName("head")[0].appendChild(scriptElement);
+      };
       
-      <hr>
-      <!--/.Copyright-->
-    </footer>
-    <!--/.Footer-->
+      form = MktoForms2.loadForm("//app-sjdemo1.marketo.com", "185-NGX-811", 1174);
+      form.whenReady(function () {console.log("Marketo Form Ready"); loadScript(MARKETO_LIVE_LANDING_PAGE_SCRIPT_LOCATION);});
+    </script>
     
-    <!-- SCRIPTS -->
-    
-    <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-    
-    <!-- Bootstrap Tooltips -->
-    <script type="text/javascript" src="js/tether.min.js"></script>
-    
-    <!-- Bootstrap Core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    
-    <!-- MDB Core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    
-    {% block scripts %}
-    <!-- Custom Scripts -->
-    {% endblock %}
+    <!-- Click Predictive Links -->
+    <!--<script type="text/javascript" src="js/click-predictive-links.js"></script>-->
   </body>
 </html>
