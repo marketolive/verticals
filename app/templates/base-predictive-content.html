@@ -25,7 +25,7 @@
           function initMunchkin() {
               if (didInit === false) {
                   didInit = true;
-                  Munchkin.init('026-COU-482');
+                  Munchkin.init('185-NGX-811');
               }
           }
           var s = document.createElement('script');
@@ -42,7 +42,7 @@
           console.log("Munchkin Tag Loaded");
       })();
     </script>
-
+    
     <!-- Web Personalization Tag -->
     <script type="text/javascript">
       (function (c, h, a, f, i, e) {
@@ -57,13 +57,12 @@
           g.src = f + '?aid=' + i;
           var b = h.getElementsByTagName("script")[0];
           b.parentNode.insertBefore(g, b);
-      })(window, document, "rtp", "//sjrtp1.marketo.com/rtp-api/v1/rtp.js", "marketodemoaccount106");
-      
+          console.log("Web Personalization Tag Loaded");
+      })(window, document, "rtp", "//sjrtp3-cdn.marketo.com/rtp-api/v1/rtp.js", "mktodemolivemaster");
       rtp('send', 'view');
       rtp('get', 'campaign', true);
-      console.log("Web Personalization Tag Loaded");
     </script>
-
+    
     {% block head %}
     <!-- Custom Head Content -->
     {% endblock %}
@@ -75,7 +74,7 @@
     <!-- Custom Navbar Content -->
     {% endblock %}
     <!--/.Navbar-->
-
+    
     {% block carousel_content %}
     <!-- Custom Carousel Content -->
     {% endblock %}
@@ -86,31 +85,25 @@
     <!-- Custom Page Content -->
     {% endblock %}
     
-    <!--Footer-->
     <footer class="page-footer center-on-small-only">
-      
-      <!--Footer Links-->
       <div class="container-fluid"></div>
-      <!--/.Footer Links-->
-      
       <hr>
-      <!--/.Copyright-->
     </footer>
-    <!--/.Footer-->
-    
-    <!-- SCRIPTS -->
-    
+
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-    
+
     <!-- Bootstrap Tooltips -->
     <script type="text/javascript" src="js/tether.min.js"></script>
-    
+
     <!-- Bootstrap Core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    
+
     <!-- MDB Core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    
+    <!-- Click Predictive Links -->
+    <script type="text/javascript" src="js/click-predictive-links.js"></script>
     
     {% block scripts %}
     <!-- Custom Scripts -->
