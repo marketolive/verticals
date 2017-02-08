@@ -59,13 +59,11 @@
     <script src="//app-sjdemo1.marketo.com/js/forms2/js/forms2.min.js"></script>
     <form id="mktoForm_1174"></form>
     <script>
-      var URL_PATH = "m3-dev",
-      MARKETO_LIVE_LANDING_PAGE_SCRIPT_LOCATION = "https://marketolive.com/" + URL_PATH + "/pluginv3/marketo-live-landing-page.min.js",
-      loadScript,
+      var loadScript,
       form;
       
       loadScript = function (scriptSrc) {
-          console.log("Global Landing Page > Loading: Script: " + scriptSrc);
+          console.log("Loading: Script: " + scriptSrc);
           
           var scriptElement = document.createElement("script");
           scriptElement.async = true;
@@ -74,10 +72,7 @@
       };
       
       form = MktoForms2.loadForm("//app-sjdemo1.marketo.com", "185-NGX-811", 1174);
-      form.whenReady(function () {console.log("Marketo Form Ready"); loadScript(MARKETO_LIVE_LANDING_PAGE_SCRIPT_LOCATION);});
+      form.whenReady(function () {console.log("Marketo Form Ready"); loadScript("/js/convert-predictive-asset.js");});
     </script>
-    
-    <!-- Click Predictive Links -->
-    <!--<script type="text/javascript" src="js/click-predictive-links.js"></script>-->
   </body>
 </html>
