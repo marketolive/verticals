@@ -46,7 +46,8 @@ pages = [
   'The-Rise-of-Digital-Marketing-in-Financial-Services',
 	'mktodemoaccount317',
   'mktodemoaccount201',
-  'predictive-content'
+  'predictive-content',
+  'predictive-content-106'
 ]
 
 @app.route('/')
