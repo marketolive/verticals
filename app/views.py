@@ -107,3 +107,7 @@ def serve_custom201():
 @app.route('/predictive-assets/<asset>')
 def predictive_asset(asset):
   return render_template('predictive-assets.html', content=asset)
+
+@app.route('/predictive-assets-106/<asset>')
+def predictive_asset_106(asset):
+  return render_template('predictive-assets-106.html', content=asset)

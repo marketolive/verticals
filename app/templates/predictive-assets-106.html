@@ -1,10 +1,16 @@
+{% extends "base-simple.html" %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Predictive Assets</title>
+  <title>Predictive Assets</title>
+  <body>
+    {% block page_content %}
+    <!--Content-->
+    <h1>{{content}}</h1>
+    <!--/.Content-->
+    {% endblock %}
+    
+    {% block scripts %}
+    <!--Scripts-->
     
     <!-- Marketo Munchkin Tag -->
     <script type="text/javascript">
@@ -13,7 +19,7 @@
           function initMunchkin() {
               if (didInit === false) {
                   didInit = true;
-                  Munchkin.init('185-NGX-811');
+                  Munchkin.init('026-COU-482');
               }
           }
           var s = document.createElement('script');
@@ -46,18 +52,13 @@
           var b = h.getElementsByTagName("script")[0];
           b.parentNode.insertBefore(g, b);
           console.log("Web Personalization Tag Loaded");
-      })(window, document, "rtp", "//sjrtp3-cdn.marketo.com/rtp-api/v1/rtp.js", "mktodemolivemaster");
+      })(window, document, "rtp", "//sjrtp-cdn.marketo.com/rtp-api/v1/rtp.js", "marketodemoaccount106");
       rtp('send', 'view');
       rtp('get', 'campaign', true);
     </script>
-  </head>
-  
-  <body>
-    {% block page_content %}
-    <!-- Custom Page Content -->
-    {% endblock %}
-    <script src="//app-sjdemo1.marketo.com/js/forms2/js/forms2.min.js"></script>
-    <form id="mktoForm_1174"></form>
+    
+    <script src="//app-sjp.marketo.com/js/forms2/js/forms2.min.js"></script>
+    <form id="mktoForm_5288"></form>
     <script>
       var loadScript,
       form;
@@ -71,8 +72,10 @@
           document.getElementsByTagName("head")[0].appendChild(scriptElement);
       };
       
-      form = MktoForms2.loadForm("//app-sjdemo1.marketo.com", "185-NGX-811", 1174);
+      form = MktoForms2.loadForm("//app-sjp.marketo.com", "026-COU-482", 5288);
       form.whenReady(function () {console.log("Marketo Form Ready"); loadScript("/js/convert-predictive-asset.js");});
     </script>
+    {% endblock %}
+    <!--/.Scripts-->
   </body>
 </html>
