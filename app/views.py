@@ -15,6 +15,7 @@ pages = [
   'base',
   'cleanbase',
   'custombase',
+  'base-simple',
   'travel',
   'healthcare',
   'technology',
@@ -47,7 +48,8 @@ pages = [
 	'mktodemoaccount317',
   'mktodemoaccount201',
   'predictive-content',
-  'predictive-content-106'
+  'predictive-content-106',
+  'predictive-content-106d'
 ]
 
 @app.route('/')
@@ -111,3 +113,7 @@ def predictive_asset(asset):
 @app.route('/predictive-assets-106/<asset>')
 def predictive_asset_106(asset):
   return render_template('predictive-assets-106.html', content=asset)
+
+@app.route('/predictive-assets-106d/<asset>')
+def predictive_asset_106d(asset):
+  return render_template('predictive-assets-106d.html', content=asset) 
