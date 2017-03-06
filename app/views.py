@@ -49,7 +49,8 @@ pages = [
   'mktodemoaccount201',
   'predictive-content',
   'predictive-content-106',
-  'predictive-content-106d'
+  'predictive-content-106d',
+  'blog-page'
 ]
 
 @app.route('/')
