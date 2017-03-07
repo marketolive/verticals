@@ -10,14 +10,14 @@
         (function () {
             var didInit = false;
             function initMunchkin() {
-                document.cookie = "_mkto_trk=;domain=.marketolive.com;path=/";
+                document.cookie = "_mkto_trk=;domain=.marketolive.com;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT";
                 console.log("Removed > Cookie: _mkto_trk");
                 
                 if (didInit === false) {
                     didInit = true;
                     Munchkin.init('185-NGX-811', {
                         cookieLifeDays: 365,
-                        cookieAnon: false,
+                        cookieAnon: true,
                         disableClickDelay: false
                     });
                     console.log("Munchkin Tag Loaded");
@@ -40,9 +40,9 @@
       <!-- Web Personalization Tag -->
       <script type="text/javascript">
         (function (c, h, a, f, i, e) {
-            document.cookie = "trwsa.sid=;domain=.marketolive.com;path=/";
+            document.cookie = "trwsa.sid=;domain=.marketolive.com;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT";
             console.log("Removed > Cookie: trwsa.sid");
-            document.cookie = "trwv.uid=;domain=.marketolive.com;path=/";
+            document.cookie = "trwv.uid=;domain=.marketolive.com;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT";
             console.log("Removed > Cookie: trwv.uid");
             
             c[a] = c[a] || function () {
