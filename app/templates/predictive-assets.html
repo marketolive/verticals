@@ -12,7 +12,11 @@
             function initMunchkin() {
                 if (didInit === false) {
                     didInit = true;
-                    Munchkin.init('185-NGX-811');
+                    Munchkin.init('185-NGX-811', {
+                        cookieLifeDays: 365,
+                        cookieAnon: false,
+                        disableClickDelay: false
+                    });
                 }
             }
             var s = document.createElement('script');

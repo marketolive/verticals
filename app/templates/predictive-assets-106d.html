@@ -12,7 +12,11 @@
             function initMunchkin() {
                 if (didInit === false) {
                     didInit = true;
-                    Munchkin.init('767-TVJ-204');
+                    Munchkin.init('767-TVJ-204', {
+                        cookieLifeDays: 365,
+                        cookieAnon: false,
+                        disableClickDelay: false
+                    });
                 }
             }
             var s = document.createElement('script');

@@ -12,7 +12,11 @@
             function initMunchkin() {
                 if (didInit === false) {
                     didInit = true;
-                    Munchkin.init('026-COU-482');
+                    Munchkin.init('026-COU-482', {
+                        cookieLifeDays: 365,
+                        cookieAnon: false,
+                        disableClickDelay: false
+                    });
                 }
             }
             var s = document.createElement('script');
