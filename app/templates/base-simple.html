@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Base Simple</title>
+    {% block head %}
+    <!-- Custom Head Content -->
+    {% endblock %}
   </head>
-  
   <body>
     {% block page_content %}
     <!-- Custom Page Content -->
@@ -16,4 +17,7 @@
     <!-- Custom Scripts -->
     {% endblock %}
   </body>
+  <footer>
+    <script type="text/javascript" src="/js/convert-predictive-asset.js"></script>
+  </footer>
 </html>

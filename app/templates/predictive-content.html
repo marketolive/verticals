@@ -1,7 +1,67 @@
 {% extends "base-predictive-content.html" %}
 <!DOCTYPE html>
 <html lang="en">
-  <title>Predictive Content</title>
+  <head>
+    {% block head %}
+      <title>Predictive Content | MarketoLive Master</title>
+      
+      <!-- Marketo Munchkin Tag -->
+      <script type="text/javascript">
+        (function () {
+            var didInit = false;
+            function initMunchkin() {
+                if (didInit === false) {
+                    didInit = true;
+                    Munchkin.init('185-NGX-811');
+                }
+            }
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = '//munchkin.marketo.net/munchkin.js';
+            s.onreadystatechange = function () {
+                if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                    initMunchkin();
+                }
+            };
+            s.onload = initMunchkin;
+            document.getElementsByTagName('head')[0].appendChild(s);
+            console.log("Munchkin Tag Loaded");
+        })();
+      </script>
+      
+      <!-- Web Personalization Tag -->
+      <script type="text/javascript">
+        (function (c, h, a, f, i, e) {
+            c[a] = c[a] || function () {
+                (c[a].q = c[a].q || []).push(arguments)
+            };
+            c[a].a = i;
+            c[a].e = e;
+            var g = h.createElement("script");
+            g.async = true;
+            g.type = "text/javascript";
+            g.src = f + '?aid=' + i;
+            var b = h.getElementsByTagName("script")[0];
+            b.parentNode.insertBefore(g, b);
+            console.log("Web Personalization Tag Loaded");
+        })(window, document, "rtp", "//sjrtp3-cdn.marketo.com/rtp-api/v1/rtp.js", "mktodemolivemaster");
+        
+        rtp('send', 'view');
+        rtp('get', 'campaign', true);
+        rtp('set', 'rcmd', 'richmedia', 'template1', {
+            "rcmd.title.text": "RECOMMENDED CONTENT",
+            "rcmd.cta.text": "READ MORE",
+            "rcmd.title.background.color": "#4285F4",
+            "rcmd.title.font.color": "white",
+            "rcmd.content.background.color": "#E2E2E2",
+            "rcmd.cta.background.color": "#2BBBAD",
+            "category": ["Demo"]
+        });
+        rtp('get', 'rcmd', 'richmedia');
+      </script>
+    {% endblock %}
+  </head>
   <body>
     {% block navbar %}
     <!--Navbar-->
@@ -180,18 +240,6 @@
             }
           </style>
           <div name="predictive-content" class="RTP_RCMD2" data-rtp-template-id="template1"></div>
-          <script type="text/javascript">
-            rtp('set', 'rcmd', 'richmedia', 'template1', {
-                "rcmd.title.text": "RECOMMENDED CONTENT",
-                "rcmd.cta.text": "READ MORE",
-                "rcmd.title.background.color": "#4285F4",
-                "rcmd.title.font.color": "white",
-                "rcmd.content.background.color": "#E2E2E2",
-                "rcmd.cta.background.color": "#2BBBAD",
-                "category": ["Demo"]
-            });
-            rtp('get', 'rcmd', 'richmedia');
-          </script>
         </div>
       </aside>
     </div>
