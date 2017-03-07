@@ -14,7 +14,7 @@
                 var result;
                 
                 console.log("Removing > Cookie: _mkto_trk");
-                document.cookie = "_mkto_trk=";
+                document.cookie = "_mkto_trk=;domain=.marketolive.com;path=/";
                 
                 result = Munchkin.init(munchkinId, {
                         cookieLifeDays: 365,
@@ -50,9 +50,9 @@
       <script type='text/javascript'>
         (function (c, h, a, f, i, e) {
             console.log("Removing > Cookie: trwsa.sid");
-            document.cookie = "trwsa.sid=";
+            document.cookie = "trwsa.sid=;domain=.marketolive.com;path=/";
             console.log("Removing > Cookie: trwv.uid");
-            document.cookie = "trwv.uid=";
+            document.cookie = "trwv.uid=;domain=.marketolive.com;path=/";
             
             c[a] = c[a] || function () {
                 (c[a].q = c[a].q || []).push(arguments)
