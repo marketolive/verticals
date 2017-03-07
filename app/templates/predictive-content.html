@@ -9,26 +9,18 @@
       <script type="text/javascript">
         (function () {
             var didInit = false;
-            
-            function resetMunchkinCookie(munchkinId) {
-                var result;
-                
-                console.log("Removing > Cookie: _mkto_trk");
-                document.cookie = "_mkto_trk=";
-                
-                result = Munchkin.init(munchkinId, {
-                        cookieLifeDays: 365,
-                        cookieAnon: false,
-                        disableClickDelay: false
-                    });
-                
-                return result;
-            }
-            
             function initMunchkin() {
+                document.cookie = "_mkto_trk=;domain=.marketolive.com;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT";
+                console.log("Removed > Cookie: _mkto_trk");
+                
                 if (didInit === false) {
                     didInit = true;
-                    resetMunchkinCookie('185-NGX-811');
+                    Munchkin.init('185-NGX-811', {
+                        cookieLifeDays: 365,
+                        cookieAnon: true,
+                        disableClickDelay: false
+                    });
+                    console.log("Munchkin Tag Loaded");
                 }
             }
             var s = document.createElement('script');
@@ -42,17 +34,16 @@
             };
             s.onload = initMunchkin;
             document.getElementsByTagName('head')[0].appendChild(s);
-            console.log("Munchkin Tag Loaded");
         })();
       </script>
       
       <!-- Web Personalization Tag -->
       <script type="text/javascript">
         (function (c, h, a, f, i, e) {
-            console.log("Removing > Cookie: trwsa.sid");
-            document.cookie = "trwsa.sid=";
-            console.log("Removing > Cookie: trwv.uid");
-            document.cookie = "trwv.uid=";
+            document.cookie = "trwsa.sid=;domain=.marketolive.com;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT";
+            console.log("Removed > Cookie: trwsa.sid");
+            document.cookie = "trwv.uid=;domain=.marketolive.com;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT";
+            console.log("Removed > Cookie: trwv.uid");
             
             c[a] = c[a] || function () {
                 (c[a].q = c[a].q || []).push(arguments)
