@@ -8,27 +8,18 @@
       <!-- Marketo Munchkin Tag -->
       <script type="text/javascript">
         (function () {
-            var didInit = false;
+            document.cookie = "_mkto_trk=;domain=.marketolive.com;path=/";
+            console.log("Removed > Cookie: _mkto_trk");
             
-            function resetMunchkinCookie(munchkinId) {
-                var result;
-                
-                console.log("Removing > Cookie: _mkto_trk");
-                document.cookie = "_mkto_trk=;domain=.marketolive.com;path=/";
-                
-                result = Munchkin.init(munchkinId, {
+            var didInit = false;
+            function initMunchkin() {
+                if (didInit === false) {
+                    didInit = true;
+                    Munchkin.init('767-TVJ-204', {
                         cookieLifeDays: 365,
                         cookieAnon: false,
                         disableClickDelay: false
                     });
-                
-                return result;
-            }
-            
-            function initMunchkin() {
-                if (didInit === false) {
-                    didInit = true;
-                    resetMunchkinCookie('767-TVJ-204');
                 }
             }
             var s = document.createElement('script');
@@ -49,10 +40,10 @@
       <!-- Web Personalization Tag -->
       <script type='text/javascript'>
         (function (c, h, a, f, i, e) {
-            console.log("Removing > Cookie: trwsa.sid");
             document.cookie = "trwsa.sid=;domain=.marketolive.com;path=/";
-            console.log("Removing > Cookie: trwv.uid");
+            console.log("Removed > Cookie: trwsa.sid");
             document.cookie = "trwv.uid=;domain=.marketolive.com;path=/";
+            console.log("Removed > Cookie: trwv.uid");
             
             c[a] = c[a] || function () {
                 (c[a].q = c[a].q || []).push(arguments)
