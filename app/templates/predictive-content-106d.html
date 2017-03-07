@@ -8,11 +8,11 @@
       <!-- Marketo Munchkin Tag -->
       <script type="text/javascript">
         (function () {
-            document.cookie = "_mkto_trk=;domain=.marketolive.com;path=/";
-            console.log("Removed > Cookie: _mkto_trk");
-            
             var didInit = false;
             function initMunchkin() {
+                document.cookie = "_mkto_trk=;domain=.marketolive.com;path=/";
+                console.log("Removed > Cookie: _mkto_trk");
+                
                 if (didInit === false) {
                     didInit = true;
                     Munchkin.init('767-TVJ-204', {
@@ -20,6 +20,7 @@
                         cookieAnon: false,
                         disableClickDelay: false
                     });
+                    console.log("Munchkin Tag Loaded");
                 }
             }
             var s = document.createElement('script');
@@ -33,7 +34,6 @@
             };
             s.onload = initMunchkin;
             document.getElementsByTagName('head')[0].appendChild(s);
-            console.log("Munchkin Tag Loaded");
         })();
       </script>
     
