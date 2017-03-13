@@ -36,6 +36,7 @@ pages = [
   'search_tech_static',
   'search_travel_static',
   'search_telecom_static',
+  'search_dvr_static',
 	'New-advances-in-pediatric-healthcare',
   'Encourage-investments-in-long-term-health',
   'Cutting-screening-time-at-hospital',
