@@ -1,56 +1,78 @@
-{% extends "cleanbase.html" %}
+{% extends "base-predictive-content.html" %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Predictive Content - Partner MarketoLive </title>
-    
-  {% block head %}
-
-
-    <!-- Marketo Munchkin Tag -->
-    <script type="text/javascript">
-      (function () {
-          var didInit = false;
-          function initMunchkin() {
-              if (didInit === false) {
-                  didInit = true;
-                  Munchkin.init('767-TVJ-204');
-              }
-          }
-          var s = document.createElement('script');
-          s.type = 'text/javascript';
-          s.async = true;
-          s.src = '//munchkin.marketo.net/munchkin.js';
-          s.onreadystatechange = function () {
-              if (this.readyState == 'complete' || this.readyState == 'loaded') {
-                  initMunchkin();
-              }
-          };
-          s.onload = initMunchkin;
-          document.getElementsByTagName('head')[0].appendChild(s);
-          console.log("Munchkin Tag Loaded");
-      })();
-    </script>
-    
-    <!-- Web Personalization Tag -->
-      <script type='text/javascript'>
-      (function(c,h,a,f,i,e){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-       c[a].a=i;c[a].e=e;var g=h.createElement("script");g.async=true;g.type="text/javascript";
-       g.src=f+'?aid='+i;var b=h.getElementsByTagName("script")[0];b.parentNode.insertBefore(g,b);
-       })(window,document,"rtp","//sjrtp5-cdn.marketo.com/rtp-api/v1/rtp.js","mktodemoaccount106d");
-       
-      rtp('send','view');
-      rtp('get', 'campaign',true);
+    {% block head %}
+      <title>Predictive Content | MarketoLive Partner</title>
+      
+      <!-- Marketo Munchkin Tag -->
+      <script type="text/javascript">
+        (function () {
+            var didInit = false;
+            function initMunchkin() {
+                document.cookie = "_mkto_trk=;domain=.marketolive.com;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT";
+                console.log("Removed > Cookie: _mkto_trk");
+                
+                if (didInit === false) {
+                    didInit = true;
+                    Munchkin.init('767-TVJ-204', {
+                        cookieLifeDays: 365,
+                        cookieAnon: true,
+                        disableClickDelay: false
+                    });
+                    console.log("Munchkin Tag Loaded");
+                }
+            }
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = '//munchkin.marketo.net/munchkin.js';
+            s.onreadystatechange = function () {
+                if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                    initMunchkin();
+                }
+            };
+            s.onload = initMunchkin;
+            document.getElementsByTagName('head')[0].appendChild(s);
+        })();
       </script>
     
-  
-    <!-- Custom Head Content -->
+      <!-- Web Personalization Tag -->
+      <script type='text/javascript'>
+        (function (c, h, a, f, i, e) {
+            document.cookie = "trwsa.sid=;domain=.marketolive.com;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT";
+            console.log("Removed > Cookie: trwsa.sid");
+            document.cookie = "trwv.uid=;domain=.marketolive.com;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT";
+            console.log("Removed > Cookie: trwv.uid");
+            
+            c[a] = c[a] || function () {
+                (c[a].q = c[a].q || []).push(arguments)
+            };
+            c[a].a = i;
+            c[a].e = e;
+            var g = h.createElement("script");
+            g.async = true;
+            g.type = "text/javascript";
+            g.src = f + '?aid=' + i;
+            var b = h.getElementsByTagName("script")[0];
+            b.parentNode.insertBefore(g, b);
+        })(window, document, "rtp", "//sjrtp5-cdn.marketo.com/rtp-api/v1/rtp.js", "mktodemoaccount106d");
+        
+        rtp('send', 'view');
+        rtp('get', 'campaign', true);
+        rtp('set', 'rcmd', 'richmedia', 'template1', {
+            "rcmd.title.text": "RECOMMENDED CONTENT",
+            "rcmd.cta.text": "READ MORE",
+            "rcmd.title.background.color": "#4285F4",
+            "rcmd.title.font.color": "white",
+            "rcmd.content.background.color": "#E2E2E2",
+            "rcmd.cta.background.color": "#2BBBAD",
+            "category": ["Demo"]
+        });
+        rtp('get', 'rcmd', 'richmedia');
+      </script>
     {% endblock %}
   </head>
-
   <body>
     {% block navbar %}
     <!--Navbar-->
@@ -230,19 +252,6 @@
             }
           </style>
           <div class="RTP_RCMD2" data-rtp-template-id="template1"></div>
-          <script type="text/javascript">
-            rtp('set', 'rcmd', 'richmedia', 'template1', {
-                "rcmd.title.text": "RECOMMENDED CONTENT",
-                "rcmd.cta.text": "READ MORE",
-                "rcmd.title.background.color": "#4285F4",
-                "rcmd.title.font.color": "white",
-                "rcmd.content.background.color": "#E2E2E2",
-                "rcmd.cta.background.color": "#2BBBAD",
-                "category": ["demo"]
-            });
-            rtp('get', 'rcmd', 'richmedia');
-          </script>
-          <script type="text/javascript" src="js/click-predictive-links.js"></script>
         </div>
       </aside>
     </div>
