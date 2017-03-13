@@ -27,6 +27,7 @@ pages = [
   'telecom_b2b',
   'facebook',
   'economist',
+  'economist_v2',
   'search_manufacturing_static',
   'searchasset_static',
   'search_health_care_static',
