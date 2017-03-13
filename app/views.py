@@ -53,8 +53,8 @@ pages = [
   'predictive-content',
   'predictive-content-106',
   'predictive-content-106d',
-  'blog-page',
-  'channel_engagement'
+  'channel_engagement',
+  'blog-page'
 ]
 
 @app.route('/')
