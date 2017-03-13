@@ -26,6 +26,7 @@ pages = [
   'telecom',
   'telecom_b2b',
   'facebook',
+  'facebook_tivo',
   'economist',
   'wsj',
   'search_manufacturing_static',
@@ -52,7 +53,8 @@ pages = [
   'predictive-content',
   'predictive-content-106',
   'predictive-content-106d',
-  'blog-page'
+  'blog-page',
+  'channel_engagement'
 ]
 
 @app.route('/')
