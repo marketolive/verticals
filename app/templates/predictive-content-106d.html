@@ -26,7 +26,7 @@
             var s = document.createElement('script');
             s.type = 'text/javascript';
             s.async = true;
-            s.src = '//munchkin.marketo.net/munchkin.js';
+            s.src = 'https://munchkin.marketo.net/munchkin.js';
             s.onreadystatechange = function () {
                 if (this.readyState == 'complete' || this.readyState == 'loaded') {
                     initMunchkin();
@@ -56,7 +56,7 @@
             g.src = f + '?aid=' + i;
             var b = h.getElementsByTagName("script")[0];
             b.parentNode.insertBefore(g, b);
-        })(window, document, "rtp", "//sjrtp5-cdn.marketo.com/rtp-api/v1/rtp.js", "mktodemoaccount106d");
+        })(window, document, "rtp", "https://sjrtp5-cdn.marketo.com/rtp-api/v1/rtp.js", "mktodemoaccount106d");
         
         rtp('send', 'view');
         rtp('get', 'campaign', true);

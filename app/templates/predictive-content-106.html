@@ -26,7 +26,7 @@
             var s = document.createElement('script');
             s.type = 'text/javascript';
             s.async = true;
-            s.src = '//munchkin.marketo.net/munchkin.js';
+            s.src = 'https://munchkin.marketo.net/munchkin.js';
             s.onreadystatechange = function () {
                 if (this.readyState == 'complete' || this.readyState == 'loaded') {
                     initMunchkin();
@@ -57,7 +57,7 @@
             var b = h.getElementsByTagName("script")[0];
             b.parentNode.insertBefore(g, b);
             console.log("Web Personalization Tag Loaded");
-        })(window, document, "rtp", "//sjrtp1.marketo.com/rtp-api/v1/rtp.js", "marketodemoaccount106");
+        })(window, document, "rtp", "https://sjrtp1.marketo.com/rtp-api/v1/rtp.js", "marketodemoaccount106");
         
         rtp('send', 'view');
         rtp('get', 'campaign', true);
