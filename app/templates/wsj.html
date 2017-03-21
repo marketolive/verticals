@@ -17,6 +17,18 @@
 				top: 355px;
 				left: 888px;
 			}
+				#bglink	{
+								display:block;
+								height:100%;
+								width:100%;
+								position:fixed;
+								left:0;
+								top:0;
+								z-index:0;
+								text-indent:-5000em;
+								/* If you want to make only a part of background clickable,
+								     adjust height/width/left/top here. */
+				}			
 			
 		</style>
 		
@@ -58,7 +70,12 @@ rtp('get', 'campaign',true);
 
 	</head>
 	<body>
-		<div id="banner-ad1"><img src="http://placehold.it/245x600"/></div>
-		
+		<!-- <div id="banner-ad1"><img src="http://placehold.it/270x590" /></div> -->
+		<div id="banner-ad1">
+			<a href="/facebook_tivo">
+			<img src="../static/img/economist_tivo.jpg"/>
+			</a>
+		</div>
+
 	</body>
 </html>
