@@ -121,4 +121,12 @@ def predictive_asset_106(asset):
 
 @app.route('/predictive-assets-106d/<asset>')
 def predictive_asset_106d(asset):
-  return render_template('predictive-assets-106d.html', content=asset) 
+  return render_template('predictive-assets-106d.html', content=asset)
+
+@app.route('/<vertical>/facebook')
+def facebook_dynamic(vertical):
+  return render_template('/facebook-dynamic.html', vert=vertical)
+
+@app.route('/<vertical>/economist')
+def economist_dynamic(vertical):
+  return render_template('/economist-dynamic.html', vert=vertical)
