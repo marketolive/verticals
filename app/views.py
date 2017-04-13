@@ -57,12 +57,12 @@ pages = [
   'blog-page'
 ]
 
-@app.before_request
-def before_request():
-  if request.url.startswith('http://') and not request.url.startswith('http://verticals-dev.marketolive.com') and not request.url.startswith('http://localhost:5000'):
-    url = request.url.replace('http://', 'https://', 1)
-    code = 301
-    return redirect(url, code=code)
+#@app.before_request
+#def before_request():
+#  if request.url.startswith('http://') and not request.url.startswith('http://verticals-dev.marketolive.com') and not request.url.startswith('http://localhost:5000'):
+#    url = request.url.replace('http://', 'https://', 1)
+#    code = 301
+#   return redirect(url, code=code)
 
 @app.route('/')
 def no_language():
