@@ -7,4 +7,4 @@ from app import views
 
 if app.config['FORCE_SSL'] and not app.debug:
   from flask_sslify import SSLify
-  sslify = SSLify(app, permanent=True)
+  sslify = SSLify(app)
