@@ -1,5 +1,6 @@
 from app import app
-from flask import render_template, flash, request, redirect, g, abort, make_response, send_from_directory
+from flask import render_template, flash, request, redirect, g, abort, make_response, send_from_directory, Flask
+from flask_sslify import SSLify
 
 import os
 
@@ -57,12 +58,9 @@ pages = [
   'blog-page'
 ]
 
-#@app.before_request
-#def before_request():
-#  if request.url.startswith('http://') and not request.url.startswith('http://verticals-dev.marketolive.com') and not request.url.startswith('http://localhost:5000'):
-#    url = request.url.replace('http://', 'https://', 1)
-#    code = 301
-#   return redirect(url, code=code)
+if 'DYNO' in os.environ: # only trigger SSLify if the app is running on Heroku
+  app = Flask(__name__)
+  sslify = SSLify(app, permanent=True)
 
 @app.route('/')
 def no_language():
