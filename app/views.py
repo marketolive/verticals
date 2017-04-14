@@ -58,7 +58,7 @@ pages = [
   'blog-page'
 ]
 
-if 'DYNO' in os.environ not request.url.startswith('http://verticals-dev.marketolive.com'): # only trigger SSLify if the app is running on Heroku
+if 'DYNO' in os.environ and not request.url.startswith('http://verticals-dev.marketolive.com'):
   sslify = SSLify(app, permanent=True)
 
 @app.route('/')
