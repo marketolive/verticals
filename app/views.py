@@ -1,6 +1,5 @@
 from app import app
 from flask import render_template, flash, request, redirect, g, abort, make_response, send_from_directory
-from flask_sslify import SSLify
 
 import os
 
@@ -57,9 +56,6 @@ pages = [
   'channel_engagement',
   'blog-page'
 ]
-
-if 'DYNO' in os.environ and not request.url.startswith('http://verticals-dev.marketolive.com'):
-  sslify = SSLify(app, permanent=True)
 
 @app.route('/')
 def no_language():
