@@ -45,7 +45,7 @@ if (getUrlParam("click") == "true") {
                 var linkIndex = Math.floor(Math.random() * 3),
                 submitParam;
                 
-                if (Math.random() >= 0.5) {
+                if (Math.random() >= 0.95) {
                     submitParam = "submit=true";
                 } else {
                     submitParam = "submit=false";
