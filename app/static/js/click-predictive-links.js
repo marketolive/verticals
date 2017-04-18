@@ -230,6 +230,7 @@ function clickPredictiveLink() {
                         }
                         
                         console.log("Click Predictive Links > Updated Web Bar Link: " + document.getElementsByClassName(barContentClassName)[0].getElementsByTagName("a")[0].href);
+                        document.getElementsByClassName(barContentClassName)[0].getElementsByTagName("a")[0].target = "";
                         document.getElementsByClassName(barContentClassName)[0].getElementsByTagName("a")[0].click();
                     } else if (parseInt((currTime - startTime) / 1000) > 3) {
                         console.log("Click Predictive Links > Web Bar IS NOT Available");
@@ -281,7 +282,7 @@ function resetCookies() {
         resetRtpCookie(rtpTagUrl, rtpAccount, function () {
             window.setTimeout(function () {
                 clickPredictiveLink();
-            }, 1000);
+            }, 1500);
         });
     });
 }
