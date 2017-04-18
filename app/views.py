@@ -50,9 +50,6 @@ pages = [
   'The-Rise-of-Digital-Marketing-in-Financial-Services',
 	'mktodemoaccount317',
   'mktodemoaccount201',
-  'predictive-content',
-  'predictive-content-106',
-  'predictive-content-106d',
   'channel_engagement',
   'blog-page'
 ]
@@ -110,6 +107,12 @@ def serve_custom317():
 @app.route('/mktodemoaccount201')
 def serve_custom201():
 	return send_from_directory(os.path.join(app_dir, 'templates', 'custompages'), 'mktodemoaccount201.html')
+
+@app.route('/predictive-content')
+@app.route('/predictive-content-106')
+@app.route('/predictive-content-106d')
+def predictive_content():
+  return render_template('predictive-content.html')
 
 @app.route('/predictive-assets/<asset>')
 def predictive_asset(asset):
