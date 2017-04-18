@@ -269,6 +269,12 @@ function resetCookies() {
         rtpAccount = mktoLive106dRtpAccount;
         console.log("Click Predictive Links > Loading 106d Tags");
         break;
+    default:
+        munchkinId = mktoLiveMasterMunchkinId;
+        rtpTagUrl = mktoLiveMasterRtpTagUrl;
+        rtpAccount = mktoLiveMasterRtpAccount;
+        console.log("Click Predictive Links > Loading Master Tags");
+        break;
     }
     
     resetMunchkinCookie(munchkinId, function () {
