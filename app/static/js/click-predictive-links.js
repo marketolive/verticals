@@ -61,7 +61,7 @@ function resetMunchkinCookie(munchkinId, callback) {
     overloadMunchkinInit();
     Munchkin.init(munchkinId, {
         cookieLifeDays: 365,
-        cookieAnon: false,
+        cookieAnon: true,
         disableClickDelay: false
     }, callback);
 }
@@ -78,7 +78,7 @@ function resetMasterMunchkinCookie(callback) {
         overloadMunchkinInit();
         Munchkin.init('185-NGX-811', {
             cookieLifeDays: 365,
-            cookieAnon: true,
+            cookieAnon: false,
             disableClickDelay: false
         }, function () {
             console.log("Associating > Lead : " + email);
