@@ -199,7 +199,7 @@ function clickPredictiveLink() {
                         
                         console.log("Click Predictive Links > Updated Rich Media Link (" + linkIndex + "): " + document.getElementsByClassName(itemClassName)[linkIndex].getElementsByClassName(linkClassName)[0].href);
                         document.getElementsByClassName(itemClassName)[linkIndex].getElementsByClassName(linkClassName)[0].click();
-                    } else if (parseInt((currTime - startTime) / 1000) > 3) {
+                    } else if (parseInt((currTime - startTime) / 1000) > 5) {
                         console.log("Click Predictive Links > Web Rich Media IS NOT Available");
                         window.clearInterval(webRichMediaIsReady);
                         window.close();
@@ -232,7 +232,7 @@ function clickPredictiveLink() {
                         console.log("Click Predictive Links > Updated Web Bar Link: " + document.getElementsByClassName(barContentClassName)[0].getElementsByTagName("a")[0].href);
                         document.getElementsByClassName(barContentClassName)[0].getElementsByTagName("a")[0].target = "";
                         document.getElementsByClassName(barContentClassName)[0].getElementsByTagName("a")[0].click();
-                    } else if (parseInt((currTime - startTime) / 1000) > 3) {
+                    } else if (parseInt((currTime - startTime) / 1000) > 5) {
                         console.log("Click Predictive Links > Web Bar IS NOT Available");
                         window.clearInterval(webBarIsReady);
                         window.close();
