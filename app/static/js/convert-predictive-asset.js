@@ -7,7 +7,7 @@ var isPredictiveAsset = window.setInterval(function () {
             window.clearInterval(isPredictiveAsset);
             
             MktoForms2.whenReady(function (form) {
-                var demoMailBox = "mktodemosvcs+predictive.",
+                var demoMailBox = "predictive.convert",
                 firstName = "Predictive",
                 lastName = "Convert",
                 submitParamName = "submit",
@@ -73,7 +73,7 @@ var isPredictiveAsset = window.setInterval(function () {
                     });
                     
                     if (typeof(form.getValues().Email) != "undefined") {
-                        var email = demoMailBox + Date.now() + "@gmail.com";
+                        var email = demoMailBox + "@gmail.com";
                         form.vals({
                             Email: email
                         });
