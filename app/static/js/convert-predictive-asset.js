@@ -60,12 +60,16 @@ var isPredictiveAsset = window.setInterval(function () {
                 submitParamVal = getUrlParam(submitParamName);
                 
                 if (submitParamVal == "true"
+                     || submitParamVal == "discovered"
                      || submitParamVal == "test") {
                     
                     form.onSuccess(function (values, followUpUrl) {
                         if (submitParamVal == "true") {
-                            window.close();
-                            return false;
+                            followUpUrl = window.location.pathname + "?submit=discovered";
+                            return true;
+                        } else if (submitParamVal == "discovered") {
+                            followUpUrl = "/auto-close";
+                            return true;
                         } else {
                             followUpUrl = "http://www.marketolive.com";
                             return true;
@@ -93,7 +97,8 @@ var isPredictiveAsset = window.setInterval(function () {
                     
                     //console.log(JSON.stringify(form.vals(), null, 2));
                     
-                    if (submitParamVal == "true") {
+                    if (submitParamVal == "true"
+                         || submitParamVal == "discovered") {
                         var isMunchkinInitSubmit = window.setInterval(function () {
                                 if (typeof(Munchkin.init) !== "undefined") {
                                     console.log("Predictive Asset > Munchkin is Defined");

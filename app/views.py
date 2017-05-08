@@ -51,7 +51,8 @@ pages = [
 	'mktodemoaccount317',
   'mktodemoaccount201',
   'channel_engagement',
-  'blog-page'
+  'blog-page',
+  'auto-close'
 ]
 
 @app.route('/')
