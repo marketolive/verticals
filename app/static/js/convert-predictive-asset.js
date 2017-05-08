@@ -67,13 +67,13 @@ var isPredictiveAsset = window.setInterval(function () {
                         if (submitParamVal == "true") {
                             window.setTimeout(function () {
                                 window.location.href = window.location.pathname + "?submit=discovered";
-                                return false;
                             }, 1000);
+                            return false;
                         } else if (submitParamVal == "discovered") {
                             window.setTimeout(function () {
                                 window.location.href = "/auto-close";
-                                return false;
                             }, 1000);
+                            return false;
                         } else {
                             window.location.href = "http://www.marketolive.com";
                             return false;
