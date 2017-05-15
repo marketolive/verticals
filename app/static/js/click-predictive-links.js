@@ -217,7 +217,7 @@ function clickPredictiveLink() {
                         
                         var submitParam;
                         
-                        if (Math.random() <= 0.95) {
+                        if (Math.random() <= 0.33) {
                             submitParam = "submit=true";
                         } else {
                             submitParam = "submit=false";
