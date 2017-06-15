@@ -53,7 +53,7 @@
             </nav>
           </div>
           <span class="android-mobile-title mdl-layout-title">
-            <img class="marketo-live-logo-image" src="{{ url_for('static', filename='img/marketo-live-circle.png')}}">>
+            <!-- <img class="marketo-live-logo-image" src="{{ url_for('static', filename='img/marketo-live-circle.png')}}">> -->
           </span>
           <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
             <i class="material-icons">more_vert</i>
@@ -72,24 +72,15 @@
           <img class="marketo-live-logo-image" src="{{ url_for('static', filename='img/marketo-live-circle.png')}}">
         </span>
         <nav class="mdl-navigation">
-          <span class="mdl-navigation__link">Verticals</span>
-          <a class="mdl-navigation__link" href="">Manufacturing</a>
-          <a class="mdl-navigation__link" href="">Healthcare</a>
-          <a class="mdl-navigation__link" href="">Higher Education</a>
+          <a class="mdl-navigation__link" href="">Verticals</a>
           <div class="drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">ABM</span>
-          <a class="mdl-navigation__link" href="">Higher Education</a>
-          <div class="drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Website Personalization</span>
-          <a class="mdl-navigation__link" href="">Location Based</a>
-          <a class="mdl-navigation__link" href="">Persona Based</a>
-          <div class="drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">B2C</span>
-          <a class="mdl-navigation__link" href="">Turner Travel</a>
-          <a class="mdl-navigation__link" href="">Search Term</a>
-          <div class="drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Lifecycle Stage</span>
-          <a class="mdl-navigation__link" href="">Consideration</a>
+          <a class="mdl-navigation__link" href="">ABM</a>
+          <div class="drawer-separator"></div>          
+          <a class="mdl-navigation__link" href="">Website Personalization</a>
+          <div class="drawer-separator"></div>          
+          <a class="mdl-navigation__link" href="">B2C</a>          
+          <div class="drawer-separator"></div>          
+          <a class="mdl-navigation__link" href="">Lifecycle Stage</a>
         </nav>
       </div>
 
@@ -109,6 +100,37 @@
         
         <div class="android-more-section">
           <div class="android-section-title mdl-typography--display-1-color-contrast">Content for You:</div>
+          
+          <!-- Attempt and Integrating CRE into Page -->
+          <aside id="mk-sidebar" class="mk-builtin">
+            <div class="sidebar-wrapper">
+              <style>
+                  .RTP_RCMD2 {
+                      line-height: normal !important;
+                  }
+                  .RTP_RCMD2 [data-rtp-id="rtp_rcmd2_tpl_2"] .rtp_rcmd2_img_container {
+                      height: 100% !important;
+                  }
+              </style>
+              <div class="RTP_RCMD2" data-rtp-template-id="template1"></div> 
+
+              <script type="text/javascript">// 
+              rtp('set', 'rcmd', 'richmedia','template1',
+              {
+                  "rcmd.title.text" : "RECOMMENDED CONTENT",
+                  "rcmd.cta.text" : "READ MORE",
+                  "rcmd.title.background.color" : "#4285F4",
+                  "rcmd.title.font.color" : "white",
+                  "rcmd.content.background.color" :"#E2E2E2",
+                  "rcmd.cta.background.color" : "#2BBBAD",
+                  "category": ["Asset Management"]
+              }
+              );
+              rtp('get','rcmd', 'richmedia');
+              </script> 
+            </div>
+          </aside>
+
           <div class="android-card-container mdl-grid">
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">

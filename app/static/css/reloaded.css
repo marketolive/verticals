@@ -152,10 +152,10 @@ a img{
 
   .drawer .mdl-navigation__link.mdl-navigation__link {
     font-size: 14px;
-    color: #757575;
+    color: #5A54A4;
   }
 
-  .drawer span.mdl-navigation__link.mdl-navigation__link {
+  .drawer nav.mdl-navigation__link.mdl-navigation__link {
     color: #5A54A4;
   }
 
@@ -471,7 +471,7 @@ a img{
   }
 
   .android-title {
-    display: none !important;
+    float: left;
   }
 
   .android-mobile-title {
