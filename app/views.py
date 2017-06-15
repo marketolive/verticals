@@ -52,7 +52,8 @@ pages = [
   'mktodemoaccount201',
   'channel_engagement',
   'blog-page',
-  'auto-close'
+  'auto-close',
+  'reloaded'
 ]
 
 @app.route('/')
