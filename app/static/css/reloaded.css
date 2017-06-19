@@ -29,7 +29,7 @@ a img{
 }
 
 ::selection {
-  background-color: #6ab344;
+  /*background-color: #6ab344;*/
   color: #fff;
 }
 
@@ -379,10 +379,11 @@ a img{
 }
 
 .android-more-section {
-  padding: 80px 0;
+  padding: 40px 0;
   max-width: 1044px;
   margin-left: auto;
   margin-right: auto;
+  min-height: 650px;
 }
 
   .android-more-section .android-section-title {
@@ -539,4 +540,18 @@ a img{
   .android-footer .mdl-mega-footer--bottom-section {
     display: none;
   }
+}
+
+/* RTP Specific Styling */
+.title-rtp {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  color: #767777;
+  font-weight: 300;
+  font-size: 16px;
+  display: none;
+}
+
+.rtp-content-title {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
