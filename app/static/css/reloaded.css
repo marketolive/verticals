@@ -555,3 +555,37 @@ a img{
 .rtp-content-title {
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
+
+/*Mel's styles */
+
+
+.rtp_rcmd2_content_container:hover {
+    background-color: #64ffda !important;
+
+}
+
+
+.rtp_rcmd2_link {
+  position:relative;
+}
+.rtp_rcmd2_link_container a:hover {
+  padding: 5px 30px 8px 12px !important;
+}
+
+.rtp_rcmd2_link:hover:after{
+
+/*  bottom: 0;*/
+  color: #ffffff;
+  content: '→';
+  font-size: 14px;
+  position: absolute;
+  transition: all 0.3s ease 0s; 
+  border: solid 1px #ffffff;
+  border-radius:50%;
+
+  transform: translate(50%, 0);
+}
+
+
+
+
