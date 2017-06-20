@@ -25,6 +25,13 @@ $(document).ready(function() {
 		    	'padding': '10px',
 		    	'font-family': "Roboto, Helvetica, Arial, sans-serif"
 		    });
+		    $(".rtp_rcmd2_item_inner").hover(function() {
+		    	/* Stuff to do when the mouse enters the element */
+		    	
+		    }, function() {
+		    	/* Stuff to do when the mouse leaves the element */
+		    });
+		    
 		    clearInterval(handle);
 		    handle = 0;
 		}
@@ -37,12 +44,6 @@ $(document).ready(function() {
         //active.removeClass('active');
         // next.addClass('active');
     }
-
-
-
-
-
-       
 });
 
 // $(document).ready(function() {
