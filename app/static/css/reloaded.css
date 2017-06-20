@@ -543,12 +543,7 @@ a img{
 }
 
 /* RTP Specific Styling */
-.title-rtp {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  line-height: 1;
-  color: #767777;
-  font-weight: 300;
-  font-size: 16px;
+.remove-title {
   display: none;
 }
 

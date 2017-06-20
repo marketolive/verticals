@@ -12,8 +12,19 @@ $(document).ready(function() {
         var title = $(".rtp_rcmd2_title"); 
         var content_tl = $(".rtp_rcmd2_link_hidden h4")
         if (title.length ) {
-		    
-		    content_tl.addClass('rtp-content-title, mdl-card__title-text')
+		    title.addClass('remove-title');
+		    content_tl.addClass('rtp-content-title, mdl-card__title-text');
+		    $(".rtp_rcmd2_link").attr('id', 'new-link').css({
+		    	"background-color": "none",
+		    	"font-family": "Roboto, 'Helvetica', 'Arial', sans-serif"
+		    });
+		    $(".rtp_rcmd2_description p").css('font-size', '12px');
+		    $(".rtp_rcmd2_label_container").css('height', 'auto');
+		    $("[data-rtp-widget-container]").css({
+		    	'border': "1px solid #d2d2d2",
+		    	'padding': '10px',
+		    	'font-family': "Roboto, Helvetica, Arial, sans-serif"
+		    });
 		    clearInterval(handle);
 		    handle = 0;
 		}
