@@ -44,7 +44,7 @@
           function initMunchkin() {
               if (didInit === false) {
                   didInit = true;
-                  Munchkin.init('026-COU-482', {
+                  Munchkin.init('185-NGX-811', {
                       cookieLifeDays: 365,
                       cookieAnon: false,
                       disableClickDelay: false
@@ -66,25 +66,27 @@
       })();
     </script>
 
-    <!-- Web Personalization Tag -->
-    <script type="text/javascript">
-      (function (c, h, a, f, i, e) {
-          c[a] = c[a] || function () {
-              (c[a].q = c[a].q || []).push(arguments)
-          };
-          c[a].a = i;
-          c[a].e = e;
-          var g = h.createElement("script");
-          g.async = true;
-          g.type = "text/javascript";
-          g.src = f + '?aid=' + i;
-          var b = h.getElementsByTagName("script")[0];
-          b.parentNode.insertBefore(g, b);
-          console.log("Web Personalization Tag Loaded");
-      })(window, document, "rtp", "https://sjrtp1.marketo.com/rtp-api/v1/rtp.js", "marketodemoaccount106");
-      
-      rtp('send', 'view');
-      rtp('get', 'campaign', true);
+    <!-- RTP tag -->
+    <script type = 'text/javascript'>
+        (function(c, h, a, f, i, e) {
+            c[a] = c[a] || function() {
+                (c[a].q = c[a].q || []).push(arguments)
+            };
+            c[a].a = i;
+            c[a].e = e;
+            var g = h.createElement("script");
+            g.async = true;
+            g.type = "text/javascript";
+            g.src = f + '?aid=' + i;
+            var b = h.getElementsByTagName("script")[0];
+            b.parentNode.insertBefore(g, b);
+        })(window, document, "rtp", "//sjrtp3-cdn.marketo.com/rtp-api/v1/rtp.js", "mktodemolivemaster");
+
+        rtp('send', 'view');
+        rtp('get', 'campaign', true); 
+    </script>
+<!-- End of RTP tag -->
+    
     </script>
 
     {% block head %}
