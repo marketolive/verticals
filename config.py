@@ -1,1 +1,1 @@
-FORCE_SSL = True
+FORCE_SSL = False
