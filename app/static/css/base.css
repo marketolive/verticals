@@ -58,3 +58,31 @@ footer.page-footer {
 .flex-center {
     color: #fff;
 }
+
+/* Modal Styles from Melanie */
+
+.icon-image {
+    height:60%;
+    width:60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.icon-section p {
+    text-align: center;
+    margin-top: 1em;
+    color: #ffffff;
+}
+.modal-title {
+text-align:center;
+padding-bottom: 2em;
+color: #ffffff;
+}
+.modal-body {
+   background: url(../static/img/black-banner.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+.hover {
+  border: 3px solid #ffffff;
+  border-radius:50%;
+}
