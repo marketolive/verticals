@@ -313,33 +313,36 @@ function submitLeadData() {
     }, 0);
 }
 
-function resetCookies() {
-  var cookieAnon = getUrlParam("submit");
+function setCookies() {
+  var cookieAnon = getUrlParam("submit"),
+  pathName = window.location.pathname.split("/")[1];
   
   if (cookieAnon == "true"
      || cookieAnon == "discovered"
      || cookieAnon == "test") {
     cookieAnon = true;
-  } else {
+  } else if (cookieAnon == "false") {
     cookieAnon = false;
+  } else {
+    cookieAnon = true;
   }
   
-  switch (window.location.pathname) {
-  case "/predictive-assets":
+  switch (pathName) {
+  case "predictive-assets":
     munchkinId = mktoLiveMasterMunchkinId;
     rtpTagUrl = mktoLiveMasterRtpTagUrl;
     rtpAccount = mktoLiveMasterRtpAccount;
     console.log("Predictive Asset > Loading Master Tags");
     break;
     
-  case "/predictive-assets-106":
+  case "predictive-assets-106":
     munchkinId = mktoLive106MunchkinId;
     rtpTagUrl = mktoLive106RtpTagUrl;
     rtpAccount = mktoLive106RtpAccount;
     console.log("Predictive Asset > Loading 106 Tags");
     break;
     
-  case "/predictive-assets-106d":
+  case "predictive-assets-106d":
     munchkinId = mktoLive106dMunchkinId;
     rtpTagUrl = mktoLive106dRtpTagUrl;
     rtpAccount = mktoLive106dRtpAccount;
@@ -368,7 +371,7 @@ function resetCookies() {
   function initMunchkin() {
     if (didInit === false) {
       didInit = true;
-      resetCookies();
+      setCookies();
     }
   }
   var s = document.createElement('script');
