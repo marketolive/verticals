@@ -265,6 +265,9 @@ function clickPredictiveLink() {
     }
   } else {
     console.log("Click Predictive Links > NOT Clicking > click parameter IS NOT true");
+    window.setTimeout(function () {
+      window.close();
+    }, 1000);
   }
 }
 
