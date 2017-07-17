@@ -1,8 +1,4 @@
-var devExtensionId = "dokkjhbgengdlccldgjnbilajdbjlnhm",
-prodExtensionId = "onibnnoghllldiecboelbpcaeggfiohl",
-extensionId = prodExtensionId,
-
-mktoLiveMasterMunchkinId = "185-NGX-811",
+var mktoLiveMasterMunchkinId = "185-NGX-811",
 mktoLive106MunchkinId = "026-COU-482",
 mktoLive106dMunchkinId = "767-TVJ-204",
 mktoLiveMasterRtpTagUrl = "https://sjrtp3-cdn.marketo.com/rtp-api/v1/rtp.js",
@@ -229,11 +225,7 @@ function submitLeadData() {
                 return false;
               } else if (submit == "discovered") {
                 window.setTimeout(function () {
-                  chrome.runtime.sendMessage(extensionId, {
-                    action: "demoDataPage",
-                    tabAction: "remove",
-                    currUrl: window.location.href
-                  });
+                  window.location.href = "/auto-close";
                 }, 1000);
                 return false;
               } else {
@@ -298,11 +290,7 @@ function submitLeadData() {
                   url: window.location.pathname
                 }, null, function () {
                   window.setTimeout(function () {
-                    chrome.runtime.sendMessage(extensionId, {
-                      action: "demoDataPage",
-                      tabAction: "remove",
-                      currUrl: window.location.href
-                    });
+                    window.location.href = "/auto-close";
                   }, 1000);
                 });
               }, 1000);

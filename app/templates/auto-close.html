@@ -3,7 +3,15 @@
   <head>
     <title>Auto Close</title>
     <script>
-      window.close();
+      var devExtensionId = "dokkjhbgengdlccldgjnbilajdbjlnhm",
+      prodExtensionId = "onibnnoghllldiecboelbpcaeggfiohl",
+      extensionId = devExtensionId;
+      
+      chrome.runtime.sendMessage(extensionId, {
+        action: "demoDataPage",
+        tabAction: "remove",
+        currUrl: window.location.href
+      });
     </script>
   </head>
   <body>
