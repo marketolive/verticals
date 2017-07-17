@@ -184,7 +184,9 @@ function getUrlParam(param) {
 }
 
 function clickPredictiveLink() {
-  if (getUrlParam("click") == "true") {
+  var click = getUrlParam("click");
+  
+  if (click == "true") {
     var startTime = new Date(),
     itemClassName = "rtp_rcmd2_item",
     linkClassName = "rtp_rcmd2_link",
@@ -265,9 +267,11 @@ function clickPredictiveLink() {
     }
   } else {
     console.log("Click Predictive Links > NOT Clicking > click parameter IS NOT true");
-    window.setTimeout(function () {
-      window.close();
-    }, 1000);
+    if (click == "false") {
+      window.setTimeout(function () {
+        window.close();
+      }, 1000);
+    }
   }
 }
 
