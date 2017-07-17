@@ -1,6 +1,6 @@
 var devExtensionId = "dokkjhbgengdlccldgjnbilajdbjlnhm",
 prodExtensionId = "onibnnoghllldiecboelbpcaeggfiohl",
-extensionId = devExtensionId,
+extensionId = prodExtensionId,
  
 mktoLiveMasterMunchkinId = "185-NGX-811",
 mktoLive106MunchkinId = "026-COU-482",
