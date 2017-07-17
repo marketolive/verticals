@@ -1,4 +1,8 @@
-var mktoLiveMasterMunchkinId = "185-NGX-811",
+var devExtensionId = "dokkjhbgengdlccldgjnbilajdbjlnhm",
+prodExtensionId = "onibnnoghllldiecboelbpcaeggfiohl",
+extensionId = devExtensionId,
+ 
+mktoLiveMasterMunchkinId = "185-NGX-811",
 mktoLive106MunchkinId = "026-COU-482",
 mktoLive106dMunchkinId = "767-TVJ-204",
 mktoLiveMasterRtpTagUrl = "https://sjrtp3-cdn.marketo.com/rtp-api/v1/rtp.js",
@@ -228,7 +232,11 @@ function clickPredictiveLink() {
           } else if (parseInt((currTime - startTime) / 1000) > 5) {
             console.log("Click Predictive Links > Web Rich Media IS NOT Available");
             window.clearInterval(webRichMediaIsReady);
-            window.close();
+            chrome.runtime.sendMessage(extensionId, {
+              action: "demoDataPage",
+              tabAction: "remove",
+              currUrl: window.location.href
+            });
           }
         }, 0);
     } else {
@@ -261,7 +269,11 @@ function clickPredictiveLink() {
           } else if (parseInt((currTime - startTime) / 1000) > 5) {
             console.log("Click Predictive Links > Web Bar IS NOT Available");
             window.clearInterval(webBarIsReady);
-            window.close();
+            chrome.runtime.sendMessage(extensionId, {
+              action: "demoDataPage",
+              tabAction: "remove",
+              currUrl: window.location.href
+            });
           }
         }, 0);
     }
@@ -269,7 +281,11 @@ function clickPredictiveLink() {
     console.log("Click Predictive Links > NOT Clicking > click parameter IS NOT true");
     if (click == "false") {
       window.setTimeout(function () {
-        window.close();
+        chrome.runtime.sendMessage(extensionId, {
+          action: "demoDataPage",
+          tabAction: "remove",
+          currUrl: window.location.href
+        });
       }, 1000);
     }
   }
