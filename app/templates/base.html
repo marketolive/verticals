@@ -110,7 +110,7 @@
     {% endblock %}
     
     <!--Footer-->
-    <footer class="page-footer center-on-small-only">
+    <footer id="footer" class="page-footer center-on-small-only">
       
       <!--Footer Links-->
       <div class="container-fluid"></div>
@@ -134,6 +134,15 @@
     
     <!-- MDB Core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    
+    <script>
+      if (document.location.hash == '#predictive-content') {
+        window.setTimeout(function () {
+          window.scrollTo(0, document.body.scrollHeight);
+          console.log("Scrolled to Bottom");
+        }, 1000);
+      }
+    </script>
     
     {% block scripts %}
     <!-- Custom Scripts -->
