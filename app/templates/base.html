@@ -161,16 +161,14 @@
         return "";
       };
       
-      document.addEventListener('readystatechange', function () {
-        if (document.readyState == 'complete') {
-          let predictiveContent = getUrlParam('predictive-content');
-          
-          switch (predictiveContent) {
-          case 'rich-media':
-          case 'bar':
-            window.scrollTo(0, document.body.scrollHeight);
-            break;
-          }
+      document.getElementsByClassName('RTP_RCMD2')[0].addEventListener('load', function () {
+        let predictiveContent = getUrlParam('predictive-content');
+        
+        switch (predictiveContent) {
+        case 'rich-media':
+        case 'bar':
+          window.scrollTo(0, document.body.scrollHeight);
+          break;
         }
       });
     </script>
