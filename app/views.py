@@ -25,6 +25,7 @@ pages = [
   'financialservices',
   'telecom',
   'telecom_b2b',
+  'sports',
   'facebook',
   'facebook_tivo',
   'economist',
