@@ -136,17 +136,45 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     
     <script>
-      window.addEventListener("hashchange", function () {
-        if (window.location.hash.search(/^#(predictive-content|personalized)/) != -1) {
-          window.scrollTo(0, 0);
-          window.location.reload();
+      let getUrlParam = function (param) {
+        console.log('Getting: URL Parameter: ' + param);
+        
+        var paramString = window.location.href.split('?')[1];
+        
+        if (paramString) {
+          var params = paramString.split('&'),
+          paramPair,
+          paramName,
+          paramValue;
+          
+          for (var ii = 0; ii < params.length; ii++) {
+            paramPair = params[ii].split('=');
+            paramName = paramPair[0];
+            paramValue = paramPair[1];
+            
+            if (paramName == param) {
+              console.log('URL Parameter: ' + paramName + ' = ' + paramValue);
+              return paramValue;
+            }
+          }
+        }
+        return "";
+      };
+      
+      document.addEventListener('readystatechange', function () {
+        if (document.readyState == 'complete') {
+          let predictiveContent = getUrlParam('predictive-content');
+          
+          switch (predictiveContent) {
+          case 'rich-media':
+          case 'bar':
+            window.setTimeout(function () {
+              window.scrollTo(0, document.body.scrollHeight);
+            }, 500);
+            break;
+          }
         }
       });
-      if (window.location.hash.search(/^#predictive-content/) != -1) {
-        window.setTimeout(function () {
-          window.scrollTo(0, document.body.scrollHeight);
-        }, 1100);
-      }
     </script>
     
     {% block scripts %}
