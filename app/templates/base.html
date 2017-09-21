@@ -136,11 +136,16 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     
     <script>
-      if (document.location.hash == '#predictive-content') {
+      window.addEventListener("hashchange", function () {
+        if (window.location.hash.search(/^#(predictive-content|personalized)/) != -1) {
+          window.scrollTo(0, 0);
+          window.location.reload();
+        }
+      });
+      if (window.location.hash.search(/^#predictive-content/) != -1) {
         window.setTimeout(function () {
           window.scrollTo(0, document.body.scrollHeight);
-          console.log("Scrolled to Bottom");
-        }, 1000);
+        }, 1100);
       }
     </script>
     
