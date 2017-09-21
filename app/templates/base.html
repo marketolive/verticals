@@ -138,6 +138,7 @@
     <script>
       window.addEventListener("hashchange", function () {
         if (window.location.hash.search(/^#(predictive-content|personalized)/) != -1) {
+          window.scrollTo(0, 0);
           window.location.reload();
         }
       });
