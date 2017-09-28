@@ -12,7 +12,7 @@ app_dir = os.path.abspath(os.path.dirname(__file__))
 ########################################################
 
 verticals = [
-	'asset-managment',
+	'asset-management',
 	'healthcare',
 	'higher-education',
 	'manufacturing',
