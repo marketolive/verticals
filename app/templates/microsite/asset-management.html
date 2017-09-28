@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     {% block head %}
-    <title>Turner Healthcare</title>
+    <title>Turner Asset Management</title>
     {% endblock %}
   </head>
   <body>
@@ -23,45 +23,58 @@
           <ul class="nav navbar-nav">
             <!-- <li id="navbar-logo" class="nav-item">
               <a class="nav-link">
-                  <img src="../static/img/turner-travel.png">
+                  <img src="/static/img/turner-travel.png">
               </a>
               </li> -->
             <li class="nav-item active">
-              <a class="nav-link">Patients<span class="sr-only">(current)</span></a>
+              <a class="nav-link">Accounts & Trade<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">Healthcare Professsionals</a>
+              <a class="nav-link">Investments</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">Careers</a>
+              <a class="nav-link">Retirement Guidance</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">News</a>
+              <a class="nav-link">Why Turner</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">Find a Doctor</a>
+              <a class="nav-link">News and Insights</a>
             </li>
           </ul>
           <ul class="nav navbar-nav nav-flex-icons">
             <li class="nav-item btn-group">
-              <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Predictive Content</a>
+              <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Web Content</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <a class="dropdown-item" href="http://sjrtp-proxy.marketo.com/proxy/rtp/preview?rtp.cuid=b1650f47-d66b-4c11-9941-67eb6031deb4&_dc=1482954632413">Display Ad - Economist</a>
-                <a class="dropdown-item" href="http://sjrtp-proxy.marketo.com/proxy/rtp/preview?rtp.cuid=8b1f2853-b177-44cd-93b5-cdf7d3437d84&_dc=1482954593709">Display Ad - Facebook</a>
-                <a class="dropdown-item" href="http://sjrtp-proxy.marketo.com/proxy/rtp/preview?rtp.cuid=8862e25c-996c-4184-a586-8c474c1faebe&_dc=1484176512327">Retargeted - Website</a>
+                <a class="dropdown-item" href="{{vert}}">Default</a>
+                <a class="dropdown-item" href="?display=personalized">Personalized</a>
                 <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Verticals</h6>
+                <h6 class="dropdown-header">Predictive Content</h6>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="assetmgmt">Asset Management</a>
+                <a class="dropdown-item" href="?predictive-content=bar">Web Bar</a>
+                <a class="dropdown-item" href="?predictive-content=rich-media">Rich Media</a>
+              </div>
+            </li>
+            <li class="nav-item btn-group">
+              <a class="nav-link dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ad Retargeting</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <a class="dropdown-item" href="/ad-retargeting/google/{{vert}}">Google</a>
+                <a class="dropdown-item" href="/ad-retargeting/facebook/{{vert}}">Facebook</a>
+              </div>
+            </li>
+            <li class="nav-item btn-group">
+              <a class="nav-link dropdown-toggle" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Verticals</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                <a class="dropdown-item" href="asset-management">Asset Management</a>
                 <a class="dropdown-item" href="healthcare">Healthcare</a>
-                <a class="dropdown-item" href="highered">Higher Education</a>
+                <a class="dropdown-item" href="higher-education">Higher Education</a>
                 <a class="dropdown-item" href="manufacturing">Manufacturing</a>
-                <a class="dropdown-item" href="telecom">Mobile Provider</a>
-                <a class="dropdown-item" href="financialservices">Retail Banking</a>
+                <a class="dropdown-item" href="mobile-provider">Mobile Provider</a>
+                <a class="dropdown-item" href="retail-banking">Retail Banking</a>
                 <a class="dropdown-item" href="sports">Sports</a>
                 <a class="dropdown-item" href="technology">Technology</a>
-                <a class="dropdown-item" href="telecom_b2b">Telecom</a>
-                <a class="dropdown-item" href="travel">Travel</a>
+                <a class="dropdown-item" href="telecommunications">Telecommunications</a>
+                <a class="dropdown-item" href="travel-and-leisure">Travel &amp; Leisure</a>
               </div>
             </li>
           </ul>
@@ -77,15 +90,15 @@
       <!--Slides-->
       <div class="carousel-inner" role="listbox">
         <!--First slide-->
-        <div class="carousel-item active" id="rtp-replace" style= "background-image: url(../static/img/healthcare_hero.jpg)";>
+        <div class="carousel-item active" id="rtp-replace" style= "background-image: url(/static/img/asset_hero.jpg)";>
           <!--Caption-->
           <div class="flex-center animated fadeInDown">
             <ul>
               <li>
-                <h1 class="h1-responsive">World-Class Cancer Research</h1>
+                <h1 class="h1-responsive">At Turner, We Make Sense of Investing.</h1>
               </li>
               <li>
-                <a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default btn-lg bg-primary">Learn More</a>
+                <a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default btn-lg bg-primary">Read More</a>
               </li>
             </ul>
           </div>
@@ -107,7 +120,7 @@
           <div class="card">
             <!--Card image-->
             <div class="view overlay hm-white-slight">
-              <img src="../static/img/Healthcare_card1.jpg" class="img-fluid" alt="">
+              <img src="/static/img/asset_card1.jpg" class="img-fluid" alt="">
               <a href="#">
                 <div class="mask"></div>
               </a>
@@ -116,9 +129,9 @@
             <!--Card content-->
             <div class="card-block">
               <!--Title-->
-              <h4 class="card-title">Patients and Families</h4>
+              <h4 class="card-title">Integrity</h4>
               <!--Text-->
-              <p class="card-text">Ranked #1 Nationwide for skin cancer treatment by Newsweek, your health is in good hands.</p>
+              <p class="card-text">You expect top-quality investment products and services, and we deliver.</p>
               <a href="#" class="btn btn-primary">Learn more</a>
             </div>
             <!--/.Card content-->
@@ -132,7 +145,7 @@
           <div class="card">
             <!--Card image-->
             <div class="view overlay hm-white-slight">
-              <img src="../static/img/Healthcare_card2.jpg" class="img-fluid" alt="">
+              <img src="/static/img/asset_card2.jpg" class="img-fluid" alt="">
               <a href="#">
                 <div class="mask"></div>
               </a>
@@ -141,9 +154,9 @@
             <!--Card content-->
             <div class="card-block">
               <!--Title-->
-              <h4 class="card-title">Research</h4>
+              <h4 class="card-title">Focus</h4>
               <!--Text-->
-              <p class="card-text">A selection of thought-provoking research by our doctors, researchers, and extended community.</p>
+              <p class="card-text">Maintain a long-term perspective on investments with our disciplined approach.</p>
               <a href="#" class="btn btn-primary">Read More</a>
             </div>
             <!--/.Card content-->
@@ -157,7 +170,7 @@
           <div class="card">
             <!--Card image-->
             <div class="view overlay hm-white-slight">
-              <img src="../static/img/Healthcare_card3.jpg" class="img-fluid" alt="">
+              <img src="/static/img/asset_card3.png" class="img-fluid" alt="">
               <a href="#">
                 <div class="mask"></div>
               </a>
@@ -166,9 +179,9 @@
             <!--Card content-->
             <div class="card-block">
               <!--Title-->
-              <h4 class="card-title">Careers</h4>
+              <h4 class="card-title">Stewardship</h4>
               <!--Text-->
-              <p class="card-text">Build your future with us! Listen to what our 35,000 employees have to say about working here.</p>
+              <p class="card-text">We’re committed to helping simplify your investment decisions so you can meet your objectives.</p>
               <a href="#" class="btn btn-primary">Watch Video</a>
             </div>
             <!--/.Card content-->
@@ -188,7 +201,7 @@
             }
           </style>
           <div class="RTP_RCMD2" data-rtp-template-id="template1"></div>
-          <script type="text/javascript">// 
+          <script type="text/javascript">
             rtp('set', 'rcmd', 'richmedia','template1',
             {
                 "rcmd.title.text" : "",
@@ -197,7 +210,7 @@
                 "rcmd.title.font.color" : "white",
                 "rcmd.content.background.color" :"#E2E2E2",
                 "rcmd.cta.background.color" : "#2BBBAD",
-                "category": ["Healthcare"]
+                "category": ["Asset Management"]
             }
             );
             rtp('get','rcmd', 'richmedia');

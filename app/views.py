@@ -11,21 +11,29 @@ app_dir = os.path.abspath(os.path.dirname(__file__))
 #					
 ########################################################
 
+verticals = [
+	'asset-management',
+	'healthcare',
+	'higher-education',
+	'manufacturing',
+	'mobile-provider',
+	'retail-banking',
+	'sports',
+	'technology',
+	'telecommunications',
+	'travel-and-leisure'
+]
+
+ad_networks = [
+	'facebook',
+	'google'
+]
+
 pages = [
   'base',
   'cleanbase',
   'custombase',
   'base-simple',
-  'travel',
-  'healthcare',
-  'technology',
-  'manufacturing',
-  'highered',
-  'assetmgmt',
-  'financialservices',
-  'telecom',
-  'telecom_b2b',
-  'sports',
   'facebook',
   'facebook_tivo',
   'economist',
@@ -57,18 +65,6 @@ pages = [
   'reloaded'
 ]
 
-@app.route('/')
-def no_language():
-	return redirect('/technology')
-
-@app.route('/facebook')
-def facebook():
- 	return send_from_directory(os.path.join(app_dir, 'templates'), 'facebook.html')
-
-@app.route('/economist')
-def economist():
- 	return send_from_directory(os.path.join(app_dir, 'templates'), 'economist.html')
-
 @app.route('/js/<path:file_name>')
 def serve_js(file_name):
 	return send_from_directory(os.path.join(app_dir, 'static', 'js'), file_name)
@@ -98,9 +94,37 @@ def favicon():
 	return send_from_directory(os.path.join(app_dir, 'static', 'img'), 'favicon.ico')
 
 @app.route('/<page>')
-def main_route(page):
+def main_router(page):
 	if page in pages:
 		return render_template(page + '.html')
+	elif page in verticals:
+		return redirect('/microsite/' + page)
+
+@app.route('/microsite/<vertical>')
+def microsite_router(vertical):
+	if vertical in verticals:
+		return render_template('microsite/' + vertical + '.html', vert = vertical)
+	else:
+		abort(404)
+
+@app.route('/ad-retargeting/<ad_network>/<vertical>')
+def ad_router(ad_network, vertical):
+	if ad_network in ad_networks and vertical in verticals:
+		return render_template('ad-retargeting/' + ad_network + '.html', vert = vertical)
+	else:
+		abort(404)
+
+@app.route('/')
+def no_page():
+	return redirect('/microsite/technology')
+
+@app.route('/facebook')
+def facebook():
+ 	return send_from_directory(os.path.join(app_dir, 'templates'), 'facebook.html')
+
+@app.route('/economist')
+def economist():
+ 	return send_from_directory(os.path.join(app_dir, 'templates'), 'economist.html')
 
 # Custom Demo Account
 @app.route('/mktodemoaccount317')
@@ -128,11 +152,3 @@ def predictive_asset_106(asset):
 @app.route('/predictive-assets-106d/<asset>')
 def predictive_asset_106d(asset):
   return render_template('predictive-assets-106d.html', content=asset)
-
-@app.route('/<vertical>/facebook')
-def facebook_dynamic(vertical):
-  return render_template('/facebook-dynamic.html', vert=vertical)
-
-@app.route('/<vertical>/economist')
-def economist_dynamic(vertical):
-  return render_template('/economist-dynamic.html', vert=vertical)
