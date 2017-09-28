@@ -163,7 +163,22 @@
       
       document.addEventListener('readystatechange', function () {
         if (document.readyState == 'complete') {
-          let predictiveContent = getUrlParam('predictive-content');
+          let country = getUrlParam('country'),
+          predictiveContent = getUrlParam('predictive-content');
+          
+          switch (country) {
+          case 'jp':
+          case 'us':
+            document.getElementById('container').style.marginTop = '-60px';
+            break;
+          case 'au':
+          case 'ca':
+          case 'fr':
+          case 'de':
+          case 'uk':
+            document.getElementById('container').style.marginTop = '70px';
+            break;
+          }
           
           switch (predictiveContent) {
           case 'rich-media':
