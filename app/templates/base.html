@@ -167,8 +167,10 @@
           predictiveContent = getUrlParam('predictive-content');
           
           switch (country) {
-          case 'jp':
           case 'us':
+            document.getElementById('container').style.marginTop = '-155px';
+            break;
+          case 'jp':
             document.getElementById('container').style.marginTop = '-60px';
             break;
           case 'au':
