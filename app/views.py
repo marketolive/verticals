@@ -102,14 +102,14 @@ def main_router(page):
 @app.route('/microsite/<vertical>')
 def microsite_router(vertical):
 	if vertical in verticals:
-		return render_template('microsite/' + vertical + '.html')
+		return render_template('microsite/' + vertical + '.html', vert = vertical)
 	else:
 		abort(404)
 
 @app.route('/ad-retargeting/<ad_network>/<vertical>')
 def ad_router(ad_network, vertical):
 	if ad_network in ad_networks and vertical in verticals:
-		return render_template('ad-retargeting/' + ad_network + '.html', vertical = vertical)
+		return render_template('ad-retargeting/' + ad_network + '.html', vert = vertical)
 	else:
 		abort(404)
 

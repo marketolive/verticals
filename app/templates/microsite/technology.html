@@ -44,14 +44,27 @@
           </ul>
           <ul class="nav navbar-nav nav-flex-icons">
             <li class="nav-item btn-group">
-              <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Predictive Content</a>
+              <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Web Content</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <a class="dropdown-item" href="http://sjrtp-proxy.marketo.com/proxy/rtp/preview?rtp.cuid=a517230c-1c1b-4352-93a8-c34e0c18cfaf&_dc=1485537971286">Display Ad - Economist</a>
-                <a class="dropdown-item" href="http://sjrtp-proxy.marketo.com/proxy/rtp/preview?rtp.cuid=3114493e-778b-41c0-80d6-6fe354e08623&_dc=1482955122695">Display Ad - Facebook</a>
-                <a class="dropdown-item" href="http://sjrtp-proxy.marketo.com/proxy/rtp/preview?rtp.cuid=aeb1b9e1-54e8-4d9d-9a30-e5b8c103643d&_dc=1484176405996">Retargeted Website</a>
+                <a class="dropdown-item" href="{{vert}}">Default</a>
+                <a class="dropdown-item" href="?display=personalized">Personalized</a>
                 <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Verticals</h6>
+                <h6 class="dropdown-header">Predictive Content</h6>
                 <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="?predictive-content=bar">Web Bar</a>
+                <a class="dropdown-item" href="?predictive-content=rich-media">Rich Media</a>
+              </div>
+            </li>
+            <li class="nav-item btn-group">
+              <a class="nav-link dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ad Retargeting</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <a class="dropdown-item" href="/ad-retargeting/google/{{vert}}">Google</a>
+                <a class="dropdown-item" href="/ad-retargeting/facebook/{{vert}}">Facebook</a>
+              </div>
+            </li>
+            <li class="nav-item btn-group">
+              <a class="nav-link dropdown-toggle" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Verticals</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
                 <a class="dropdown-item" href="asset-management">Asset Management</a>
                 <a class="dropdown-item" href="healthcare">Healthcare</a>
                 <a class="dropdown-item" href="higher-education">Higher Education</a>
