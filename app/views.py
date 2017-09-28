@@ -62,6 +62,7 @@ pages = [
   'channel_engagement',
   'blog-page',
   'auto-close',
+	'local',
   'reloaded'
 ]
 
