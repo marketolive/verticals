@@ -61,6 +61,7 @@ pages = [
   'mktodemoaccount201',
   'channel_engagement',
   'blog-page',
+	'local',
   'auto-close'
 ]
 
