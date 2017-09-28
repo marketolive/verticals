@@ -61,8 +61,8 @@ pages = [
   'mktodemoaccount201',
   'channel_engagement',
   'blog-page',
-	'local',
-  'auto-close'
+  'auto-close',
+	'local'
 ]
 
 @app.route('/js/<path:file_name>')
