@@ -155,9 +155,9 @@ def ad_router(ad_network, vertical):
 			return redirect('https://www.facebook.com/?dynamicAd=true&title=Energy+Efficient+Windows&link=https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F'+vertical+'%3Fdisplay%3Dpersonalized&linkText=turner-mfg.com%2Fenergy-efficient-windows&text=Save+energy+%26+beautify+your+home+with+custom+replacement+windows+from+Turner&image=https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2F'+vertical+'-facebook-ad.jpg')
 	elif ad_network == 'google':
 		if vertical == 'technology':
-			return redirect('https://www.economist.com/?title=Enterprise+Grade+Cloud+Solutions+By+Turner&link=https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F'+vertical+'%3Fdisplay%3Dpersonalized&image=https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2Ftech_hero.jpg')
+			return redirect('https://www.economist.com/?dynamicAd=true&title=Enterprise+Grade+Cloud+Solutions+By+Turner&link=https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F'+vertical+'%3Fdisplay%3Dpersonalized&image=https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2Ftech_hero.jpg')
 		elif vertical == 'manufacturing':
-			return redirect('https://www.economist.com/?title=Energy+Efficient+Windows+By+Turner&link=https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F'+vertical+'%3Fdisplay%3Dpersonalized&image=https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2F'+vertical+'-economist-ad.jpg')
+			return redirect('https://www.economist.com/?dynamicAd=true&title=Energy+Efficient+Windows+By+Turner&link=https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F'+vertical+'%3Fdisplay%3Dpersonalized&image=https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2F'+vertical+'-economist-ad.jpg')
 	elif ad_network in ad_networks and vertical in verticals:
 		return render_template('ad-retargeting/' + ad_network + '.html', vert = vertical)
 	else:
