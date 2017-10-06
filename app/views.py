@@ -149,16 +149,28 @@ def predictive_asset_106d(asset):
 
 @app.route('/ad-retargeting/<ad_network>/<vertical>')
 def ad_router(ad_network, vertical):
+	facebook_ad_domain = 'https://www.facebook.com/?dynamicAd=true'
+	economist_ad_domain = 'https://www.economist.com/?dynamicAd=true'
+	microsite_link = 'https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F' + vertical + '%3Fdisplay%3Dpersonalized'
+	vertical_img = 'https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2F' + vertical
 	if ad_network == 'facebook':
 		if vertical == 'technology':
-			return redirect('https://www.facebook.com/?dynamicAd=true&title=Enterprise+Cloud+Storage&link=https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F'+vertical+'%3Fdisplay%3Dpersonalized&linkText=turner-tech.com%2Fcloud-storage&text=Access+your+files+anytime%2C+anywhere%2C+and+on+any+device&image=https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2F'+vertical+'-facebook-ad.jpg')
+			return redirect(facebook_ad_domain + '&title=Enterprise+Cloud+Storage' + '&link=' + microsite_link  + '&linkText=turner-tech.com%2Fcloud-storage' + '&text=Access+your+files+anytime%2C+anywhere%2C+and+on+any+device' + '&image=' + vertical_img + '-facebook-ad.jpg')
+		elif vertical == 'healthcare':
+			return redirect(facebook_ad_domain + '&title=Turner+Healthcare' + '&link=' + microsite_link  + '&linkText=turner-health.com%2Fplans' + '&text=The+Leading+Healthcare+Provider' + '&image=' + vertical_img + '-facebook-ad.png')
+		elif vertical == 'higher-education':
+			return redirect(facebook_ad_domain + '&title=Turner+University' + '&link=' + microsite_link  + '&linkText=turner-university.com%2Frankings' + '&text=The+Leading+Public+University' + '&image=' + vertical_img + '-facebook-ad.png')
 		elif vertical == 'manufacturing':
-			return redirect('https://www.facebook.com/?dynamicAd=true&title=Energy+Efficient+Windows&link=https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F'+vertical+'%3Fdisplay%3Dpersonalized&linkText=turner-mfg.com%2Fenergy-efficient-windows&text=Save+energy+%26+beautify+your+home+with+custom+replacement+windows+from+Turner&image=https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2F'+vertical+'-facebook-ad.jpg')
+			return redirect(facebook_ad_domain + '&title=Energy+Efficient+Windows' + '&link=' + microsite_link + '&linkText=turner-mfg.com%2Fenergy-efficient-windows' + '&text=Save+energy+%26+beautify+your+home+with+custom+replacement+windows+from+Turner' + '&image=' + vertical_img + '-facebook-ad.jpg')
 	elif ad_network == 'google':
 		if vertical == 'technology':
-			return redirect('https://www.economist.com/?dynamicAd=true&title=Enterprise+Grade+Cloud+Solutions+By+Turner&link=https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F'+vertical+'%3Fdisplay%3Dpersonalized&image=https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2Ftech_hero.jpg')
+			return redirect(economist_ad_domain + '&title=Enterprise+Grade+Cloud+Solutions+By+Turner' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
+		elif vertical == 'healthcare':
+			return redirect(economist_ad_domain + '&title=Turner+Healthcare' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.png')
+		elif vertical == 'higher-education':
+			return redirect(economist_ad_domain + '&title=Turner+University' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.png')
 		elif vertical == 'manufacturing':
-			return redirect('https://www.economist.com/?dynamicAd=true&title=Energy+Efficient+Windows+By+Turner&link=https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F'+vertical+'%3Fdisplay%3Dpersonalized&image=https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2F'+vertical+'-economist-ad.jpg')
+			return redirect(economist_ad_domain + '&title=Energy+Efficient+Windows+By+Turner' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
 	elif ad_network in ad_networks and vertical in verticals:
 		return render_template('ad-retargeting/' + ad_network + '.html', vert = vertical)
 	else:
