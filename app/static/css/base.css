@@ -86,3 +86,30 @@ color: #ffffff;
   border: 3px solid #ffffff;
   border-radius:50%;
 }
+
+@-webkit-keyframes transformDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes transformDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.transformDown {
+  -webkit-animation-name: transformDown;
+  animation-name: transformDown;
+}
