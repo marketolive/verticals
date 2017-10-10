@@ -58,3 +58,30 @@ footer.page-footer {
 .flex-center {
     color: #fff;
 }
+
+@-webkit-keyframes transformDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes transformDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.transformDown {
+  -webkit-animation-name: transformDown;
+  animation-name: transformDown;
+}
