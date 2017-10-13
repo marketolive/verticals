@@ -24,11 +24,6 @@ verticals = [
 	'travel-and-leisure'
 ]
 
-ad_networks = [
-	'facebook',
-	'google'
-]
-
 pages = [
   'base',
   'cleanbase',
@@ -152,7 +147,7 @@ def ad_router(ad_network, vertical):
 	facebook_ad_domain = 'https://www.facebook.com/?dynamicAd=true'
 	economist_ad_domain = 'https://www.economist.com/?dynamicAd=true'
 	microsite_link = 'https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F' + vertical + '%3Fdisplay%3Dpersonalized'
-	vertical_img = 'https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2F' + vertical
+	vertical_img = 'https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2Fads%2F' + vertical
 	if ad_network == 'facebook':
 		if vertical == 'technology':
 			return redirect(facebook_ad_domain + '&title=Efficient+Cloud+Solution+for+Travel+Industry' + '&link=' + microsite_link  + '&linkText=turner-tech.com%2Fcloud-storage' + '&text=Access+your+files+anytime%2C+anywhere%2C+and+on+any+device' + '&image=' + vertical_img + '-facebook-ad.jpg')
@@ -162,6 +157,8 @@ def ad_router(ad_network, vertical):
 			return redirect(facebook_ad_domain + '&title=Turner+University' + '&link=' + microsite_link  + '&linkText=turner-university.com%2Frankings' + '&text=The+Leading+Public+University' + '&image=' + vertical_img + '-facebook-ad.png')
 		elif vertical == 'manufacturing':
 			return redirect(facebook_ad_domain + '&title=Energy+Efficient+Windows' + '&link=' + microsite_link + '&linkText=turner-mfg.com%2Fenergy-efficient-windows' + '&text=Save+energy+%26+beautify+your+home+with+custom+replacement+windows+from+Turner' + '&image=' + vertical_img + '-facebook-ad.jpg')
+		elif vertical == 'travel-and-leisure':
+			return redirect(facebook_ad_domain + '&title=Take+a+Journey+with+Us' + '&link=' + microsite_link + '&linkText=turner-travels.com%2Fjourney' + '&text=Doing+nothing+can+be+something' + '&image=' + vertical_img + '-facebook-ad.jpg')
 	elif ad_network == 'google':
 		if vertical == 'technology':
 			return redirect(economist_ad_domain + '&title=Efficient+Cloud+Solution+for+Travel+Industry' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
@@ -171,7 +168,7 @@ def ad_router(ad_network, vertical):
 			return redirect(economist_ad_domain + '&title=Turner+University' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.png')
 		elif vertical == 'manufacturing':
 			return redirect(economist_ad_domain + '&title=Energy+Efficient+Windows+By+Turner' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
-	elif ad_network in ad_networks and vertical in verticals:
-		return render_template('ad-retargeting/' + ad_network + '.html', vert = vertical)
+		elif vertical == 'travel-and-leisure':
+			return redirect(economist_ad_domain + '&title=Take+a+Journey+with+Turner+Travels' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
 	else:
 		abort(404)
