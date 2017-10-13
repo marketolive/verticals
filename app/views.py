@@ -151,7 +151,7 @@ def ad_router(ad_network, vertical):
 	facebook_ad_domain = 'https://www.facebook.com/?dynamicAd=true'
 	economist_ad_domain = 'https://www.economist.com/?dynamicAd=true'
 	microsite_link = 'https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F' + vertical + '%3Fdisplay%3Dpersonalized'
-	vertical_img = 'https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2F' + vertical
+	vertical_img = 'https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2Fads%2F' + vertical
 	if ad_network == 'facebook':
 		if vertical == 'technology':
 			return redirect(facebook_ad_domain + '&title=Efficient+Cloud+Solution+for+Travel+Industry' + '&link=' + microsite_link  + '&linkText=turner-tech.com%2Fcloud-storage' + '&text=Access+your+files+anytime%2C+anywhere%2C+and+on+any+device' + '&image=' + vertical_img + '-facebook-ad.jpg')
