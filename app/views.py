@@ -1,9 +1,10 @@
 from app import app
 from flask import render_template, flash, request, redirect, g, abort, make_response, send_from_directory
 
-import os
+import os, socket, urllib
 
 app_dir = os.path.abspath(os.path.dirname(__file__))
+
 
 ########################################################
 #
@@ -143,10 +144,14 @@ def predictive_asset_106d(asset):
 
 @app.route('/ad-retargeting/<ad_network>/<vertical>')
 def ad_router(ad_network, vertical):
+	if app.config['FORCE_SSL']:
+		scheme = 'https://'
+	else:
+		scheme = 'http://'
 	facebook_ad_domain = 'https://www.facebook.com/?dynamicAd=true'
 	economist_ad_domain = 'https://www.economist.com/?dynamicAd=true'
-	microsite_link = 'https%3A%2F%2Fverticals.marketolive.com%2Fmicrosite%2F' + vertical + '%3Fdisplay%3Dpersonalized'
-	vertical_img = 'https%3A%2F%2Fverticals.marketolive.com%2Fstatic%2Fimg%2Fads%2F' + vertical
+	microsite_link = urllib.parse.quote_plus(scheme + socket.getfqdn() + '/microsite/' + vertical + '?display=personalized')
+	vertical_img = urllib.parse.quote_plus(scheme + socket.getfqdn() + 'static/img/ads/' + vertical)
 	if ad_network == 'facebook':
 		if vertical == 'technology':
 			return redirect(facebook_ad_domain + '&title=Efficient+Cloud+Solution+for+Travel+Industry' + '&link=' + microsite_link  + '&linkText=turner-tech.com%2Fcloud-storage' + '&text=Access+your+files+anytime%2C+anywhere%2C+and+on+any+device' + '&image=' + vertical_img + '-facebook-ad.jpg')
