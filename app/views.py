@@ -151,6 +151,8 @@ def ad_router(ad_network, vertical):
 	if ad_network == 'facebook':
 		if vertical == 'technology':
 			return redirect(facebook_ad_domain + '&title=Efficient+Cloud+Solution+for+Travel+Industry' + '&link=' + microsite_link  + '&linkText=turner-tech.com%2Fcloud-storage' + '&text=Access+your+files+anytime%2C+anywhere%2C+and+on+any+device' + '&image=' + vertical_img + '-facebook-ad.jpg')
+		elif vertical == 'asset-management':
+			return redirect(facebook_ad_domain + '&title=At+Turner%2C+We+Make+Sense+of+Investing' + '&link=' + microsite_link + '&linkText=turner-investments.com%2Fsensible-approach' + '&text=A+relationship+on+your+terms' + '&image=' + vertical_img + '-facebook-ad.jpg')
 		elif vertical == 'healthcare':
 			return redirect(facebook_ad_domain + '&title=Turner+Healthcare' + '&link=' + microsite_link  + '&linkText=turner-health.com%2Fplans' + '&text=The+Leading+Healthcare+Provider' + '&image=' + vertical_img + '-facebook-ad.png')
 		elif vertical == 'higher-education':
@@ -162,6 +164,8 @@ def ad_router(ad_network, vertical):
 	elif ad_network == 'google':
 		if vertical == 'technology':
 			return redirect(economist_ad_domain + '&title=Efficient+Cloud+Solution+for+Travel+Industry' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
+		elif vertical == 'asset-management':
+			return redirect(economist_ad_domain + '&title=At+Turner%2C+We+Make+Sense+of+Investing' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
 		elif vertical == 'healthcare':
 			return redirect(economist_ad_domain + '&title=Turner+Healthcare' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.png')
 		elif vertical == 'higher-education':
