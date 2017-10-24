@@ -153,8 +153,8 @@ def ad_router(ad_network, vertical):
 	facebook_ad_domain = 'https://www.facebook.com/?dynamicAd=true'
 	economist_ad_domain = 'https://www.economist.com/?dynamicAd=true'
 	microsite_link = urllib.parse.quote_plus(scheme + socket.getfqdn() + '/microsite/' + vertical + '?display=personalized')
-	vertical_img = urllib.parse.quote_plus(scheme + socket.getfqdn() + '/static/img/ads/' + vertical)
-	
+	vertical_img) = urllib.parse.quote_plus(scheme + socket.getfqdn() + '/static/img/ads/' + vertical)
+	print (vertical_img)
 	if ad_network == 'facebook':
 		if vertical == 'technology':
 			return redirect(facebook_ad_domain + '&title=Efficient+Cloud+Solution+for+Travel+Industry' + '&link=' + microsite_link  + '&linkText=turner-tech.com%2Fcloud-storage' + '&text=Access+your+files+anytime%2C+anywhere%2C+and+on+any+device' + '&image=' + vertical_img + '-facebook-ad.jpg')
