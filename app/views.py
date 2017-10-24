@@ -144,6 +144,7 @@ def predictive_asset_106d(asset):
 
 @app.route('/ad-retargeting/<ad_network>/<vertical>')
 def ad_router(ad_network, vertical):
+	scheme = ''
 	if app.config['FORCE_SSL']:
 		scheme = 'https://'
 	else:
@@ -152,7 +153,7 @@ def ad_router(ad_network, vertical):
 	facebook_ad_domain = 'https://www.facebook.com/?dynamicAd=true'
 	economist_ad_domain = 'https://www.economist.com/?dynamicAd=true'
 	microsite_link = urllib.parse.quote_plus(scheme + socket.getfqdn() + '/microsite/' + vertical + '?display=personalized')
-	vertical_img = urllib.parse.quote_plus(scheme + socket.getfqdn() + 'static/img/ads/' + vertical)
+	vertical_img = urllib.parse.quote_plus(scheme + socket.getfqdn() + '/static/img/ads/' + vertical)
 	
 	if ad_network == 'facebook':
 		if vertical == 'technology':
