@@ -1,7 +1,8 @@
 from app import app
 from flask import render_template, flash, request, redirect, g, abort, make_response, send_from_directory
+from urllib.parse import quote_plus
 
-import os, urllib
+import os
 
 app_dir = os.path.abspath(os.path.dirname(__file__))
 
@@ -146,8 +147,8 @@ def predictive_asset_106d(asset):
 def ad_router(ad_network, vertical):
 	facebook_ad_domain = 'https://www.facebook.com/?dynamicAd=true'
 	economist_ad_domain = 'https://www.economist.com/?dynamicAd=true'
-	microsite_link = urllib.parse.quote_plus(request.host_url + 'microsite/' + vertical + '?display=personalized')
-	vertical_img = urllib.parse.quote_plus(request.host_url + 'static/img/ads/' + vertical)
+	microsite_link = quote_plus(request.host_url + 'microsite/' + vertical + '?display=personalized')
+	vertical_img = quote_plus(request.host_url + 'static/img/ads/' + vertical)
 	
 	if ad_network == 'facebook':
 		if vertical == 'technology':
