@@ -59,7 +59,8 @@ pages = [
   'channel_engagement',
   'blog-page',
   'auto-close',
-	'local'
+	'local',
+	'turner-drives'
 ]
 
 @app.route('/js/<path:file_name>')
