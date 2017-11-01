@@ -148,7 +148,7 @@
       <div class="carousel-inner" role="listbox">
         <!--First slide-->
         <div style="z-index: 0; height: 100%; background-color: rgba(17, 17, 17, 1);">
-          <div id="rtp-replace" class="carousel-item active" style="background-image: url('/static/img/tech_hero.jpg'); background-size: cover; overflow: hidden; opacity: 0.667;"></div>
+          <div id="rtp-replace" class="carousel-item active" style="background-image: url('https://www.tesla.com/tesla_theme/assets/img/models/v1.0/slideshow/Rear_Detail-1440.jpg?20171005'); background-size: cover; overflow: hidden; opacity: 0.667;"></div>
           <div style="z-index: 1; position: relative; top: -95%; height: 100%;">
             <div class="flex-center animated transformDown">
               <ul>
@@ -189,7 +189,7 @@
               <!--Title-->
               <h4 class="card-title">Model X</h4>
               <!--Text-->
-              <p class="card-text">Model X is the safest, quickest, and most capable sport utility vehicle in history.</p>
+              <p class="card-text">The safest, quickest, and most capable sport utility vehicle in history.</p>
               <a href="#" class="btn btn-primary">Custom Order</a>
             </div>
             <!--/.Card content-->
@@ -214,7 +214,7 @@
               <!--Title-->
               <h4 class="card-title">Model Y</h4>
               <!--Text-->
-              <p class="card-text">Model Y is designed from the ground up to be the safest, most exhilarating sedan on the road.</p>
+              <p class="card-text">Designed from the ground up to be the safest, most exhilarating sedan on the road.</p>
               <a href="#" class="btn btn-primary">Custom Order</a>
             </div>
             <!--/.Card content-->
@@ -239,7 +239,7 @@
               <!--Title-->
               <h4 class="card-title">Model Z</h4>
               <!--Text-->
-              <p class="card-text">Designed to attain the highest safety ratings in every category, Model 3 achieves 220 miles of range while starting at only $35,000 before incentives.</p>
+              <p class="card-text">Achieves 220 miles of range while starting at only $35,000 before incentives.</p>
               <a href="#" class="btn btn-primary">Reserve Yours</a>
             </div>
             <!--/.Card content-->
@@ -259,261 +259,17 @@
             }
           </style>
           <div class="RTP_RCMD2" data-rtp-template-id="template1"></div>
-          <script type="text/javascript">// 
-            rtp('set', 'rcmd', 'richmedia','template1',
-            {
-                "rcmd.title.text" : "",
-                "rcmd.cta.text" : "Learn More →",
-                "rcmd.title.background.color" : "#4285F4",
-                "rcmd.title.font.color" : "white",
-                "rcmd.content.background.color" :"#E2E2E2",
-                "rcmd.cta.background.color" : "#2BBBAD"
-            }
-            );
-            rtp('get','rcmd', 'richmedia');
-          </script> 
-        </div>
-      </aside>
-    </div>
-    <!--/.Content-->
-    {% endblock %}		        
-  </body>
-</html>{% extends "base.html" %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    {% block head %}
-    <title>Turner Tech</title>
-    {% endblock %}
-  </head>
-  <body>
-    {% block navbar %}
-    <!--Navbar-->
-    <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
-      <!-- Collapse button-->
-      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx2">
-      <i class="fa fa-bars"></i>
-      </button>
-      <div class="container">
-        <!--Collapse content-->
-        <div class="collapse navbar-toggleable-xs" id="collapseEx2">
-          <!--Navbar Brand-->
-          <a class="navbar-brand"></a>
-          <!--Links-->
-          <ul class="nav navbar-nav">
-            <!-- <li id="navbar-logo" class="nav-item">
-              <a class="nav-link">
-                  <img src="/static/img/turner-travel.png">
-              </a>
-              </li> -->
-            <li class="nav-item active">
-              <a class="nav-link">Products<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Solutions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Why Turner</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">News</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Resources</a>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav nav-flex-icons">
-            <li class="nav-item btn-group">
-              <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Web Content</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <a class="dropdown-item" href="{{vert}}">Default</a>
-                <a class="dropdown-item" href="?display=personalized">Personalized</a>
-                <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Display</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="?display=form">Form</a>
-                <a class="dropdown-item" href="?display=dialog">Dialog</a>
-                <a class="dropdown-item" href="?display=widget">Widget</a>
-                <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Predictive Content</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="?predictive-content=bar">Web Bar</a>
-                <a class="dropdown-item" href="?predictive-content=rich-media">Rich Media</a>
-              </div>
-            </li>
-            <li class="nav-item btn-group">
-              <a class="nav-link dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ad Retargeting</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <a class="dropdown-item" href="/ad-retargeting/google/{{vert}}" target="_blank">Google</a>
-                <a class="dropdown-item" href="/ad-retargeting/facebook/{{vert}}" target="_blank">Facebook</a>
-              </div>
-            </li>
-            <li class="nav-item btn-group">
-              <a class="nav-link dropdown-toggle" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Locale</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
-                <a class="dropdown-item" href="/local?country=au">Australia</a>
-                <a class="dropdown-item" href="/local?country=ca">Canada</a>
-                <a class="dropdown-item" href="/local?country=fr">France</a>
-                <a class="dropdown-item" href="/local?country=de">Germany</a>
-                <a class="dropdown-item" href="/local?country=jp">Japan</a>
-                <a class="dropdown-item" href="/local?country=uk">United Kingdom</a>
-                <a class="dropdown-item" href="/local?country=us">United States</a>
-              </div>
-            </li>
-            <li class="nav-item btn-group">
-              <a class="nav-link dropdown-toggle" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Verticals</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenu4">
-                <a class="dropdown-item" href="asset-management">Asset Management</a>
-                <a class="dropdown-item" href="healthcare">Healthcare</a>
-                <a class="dropdown-item" href="higher-education">Higher Education</a>
-                <a class="dropdown-item" href="manufacturing">Manufacturing</a>
-                <a class="dropdown-item" href="mobile-provider">Mobile Provider</a>
-                <a class="dropdown-item" href="retail-banking">Retail Banking</a>
-                <a class="dropdown-item" href="sports">Sports</a>
-                <a class="dropdown-item" href="technology">Technology</a>
-                <a class="dropdown-item" href="telecommunications">Telecommunications</a>
-                <a class="dropdown-item" href="travel-and-leisure">Travel &amp; Leisure</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!--/.Collapse content-->
-      </div>
-    </nav>
-    <!--/.Navbar-->
-    {% endblock %} 
-    {% block carousel_content %}
-    <!--Carousel Wrapper-->
-    <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel">
-      <!--Slides-->
-      <div class="carousel-inner" role="listbox">
-        <!--First slide-->
-        <div style="z-index: 0; height: 100%; background-color: rgba(17, 17, 17, 1);">
-          <div id="rtp-replace" class="carousel-item active" style="background-image: url('/static/img/tech_hero.jpg'); background-size: cover; overflow: hidden; opacity: 0.667;"></div>
-          <div style="z-index: 1; position: relative; top: -95%; height: 100%;">
-            <div class="flex-center animated transformDown">
-              <ul>
-                <li>
-                  <h1 class="h1-responsive">Enterprise Grade Cloud Solutions</h1>
-                </li>
-                <li>
-                  <a class="btn btn-default btn-lg bg-primary" href="?display=personalized">Learn More</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!--/.First slide-->
-      </div>
-      <!--/.Slides-->
-    </div>
-    <!--/.Carousel Wrapper-->
-    {% endblock %}
-    {% block page_content %}
-    <!--Content-->
-    <div class="container">
-      <div class="row">
-        <!--First columnn-->
-        <div class="col-md-4">
-          <!--Card-->
-          <div class="card">
-            <!--Card image-->
-            <div class="view overlay hm-white-slight">
-              <img src="/static/img/tech_card1.jpg" class="img-fluid" alt="">
-              <a href="#">
-                <div class="mask"></div>
-              </a>
-            </div>
-            <!--/.Card image-->
-            <!--Card content-->
-            <div class="card-block">
-              <!--Title-->
-              <h4 class="card-title">What is Hybrid Cloud?</h4>
-              <!--Text-->
-              <p class="card-text">Hybrid Cloud : All the perks of private datacenter with scalability of the cloud</p>
-              <a href="#" class="btn btn-primary">Learn more</a>
-            </div>
-            <!--/.Card content-->
-          </div>
-          <!--/.Card-->
-        </div>
-        <!--First columnn-->
-        <!--Second columnn-->
-        <div class="col-md-4">
-          <!--Card-->
-          <div class="card">
-            <!--Card image-->
-            <div class="view overlay hm-white-slight">
-              <img src="/static/img/tech_card2.jpg" class="img-fluid" alt="">
-              <a href="#">
-                <div class="mask"></div>
-              </a>
-            </div>
-            <!--/.Card image-->
-            <!--Card content-->
-            <div class="card-block">
-              <!--Title-->
-              <h4 class="card-title">Instant Data Protection</h4>
-              <!--Text-->
-              <p class="card-text">Check out how Turner Technologies rescued Ace Media’s data with a Hybrid Cloud Backup.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-            <!--/.Card content-->
-          </div>
-          <!--/.Card-->
-        </div>
-        <!--Second columnn-->
-        <!--Third columnn-->
-        <div class="col-md-4">
-          <!--Card-->
-          <div class="card">
-            <!--Card image-->
-            <div class="view overlay hm-white-slight">
-              <img src="/static/img/tech_card3.jpg" class="img-fluid" alt="">
-              <a href="#">
-                <div class="mask"></div>
-              </a>
-            </div>
-            <!--/.Card image-->
-            <!--Card content-->
-            <div class="card-block">
-              <!--Title-->
-              <h4 class="card-title">Industry Case Study</h4>
-              <!--Text-->
-              <p class="card-text">See how our Cloud Solutions are helping our Financial Customers achieve Data Compliance requirements.</p>
-              <a href="#" class="btn btn-primary">Watch Video</a>
-            </div>
-            <!--/.Card content-->
-          </div>
-          <!--/.Card-->
-        </div>
-        <!--Third columnn-->
-      </div>
-      <aside id="mk-sidebar" class="mk-builtin">
-        <div class="sidebar-wrapper">
-          <style>
-            .RTP_RCMD2 {
-            line-height: normal !important;
-            }
-            .RTP_RCMD2 [data-rtp-id="rtp_rcmd2_tpl_2"] .rtp_rcmd2_img_container {
-            height: 100% !important;
-            }
-          </style>
-          <div class="RTP_RCMD2" data-rtp-template-id="template1"></div>
-          <script type="text/javascript">// 
-            rtp('set', 'rcmd', 'richmedia','template1',
-            {
-                "rcmd.title.text" : "",
-                "rcmd.cta.text" : "Read More →",
-                "rcmd.title.background.color" : "#4285F4",
-                "rcmd.title.font.color" : "white",
-                "rcmd.content.background.color" :"#E2E2E2",
-                "rcmd.cta.background.color" : "#2BBBAD",
-                "category": ["Technology"]
-            }
-            );
-            rtp('get','rcmd', 'richmedia');
-          </script> 
+          <script type="text/javascript">
+            rtp('set', 'rcmd', 'richmedia', 'template1', {
+              "rcmd.title.text": "",
+              "rcmd.cta.text": "Learn More →",
+              "rcmd.title.background.color": "#4285F4",
+              "rcmd.title.font.color": "white",
+              "rcmd.content.background.color": "#E2E2E2",
+              "rcmd.cta.background.color": "#2BBBAD"
+            });
+            rtp('get', 'rcmd', 'richmedia');
+          </script>
         </div>
       </aside>
     </div>
