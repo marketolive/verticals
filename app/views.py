@@ -60,7 +60,7 @@ pages = [
   'blog-page',
   'auto-close',
 	'local',
-	'turner-drives'
+	'alset'
 ]
 
 @app.route('/js/<path:file_name>')
