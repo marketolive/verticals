@@ -60,7 +60,7 @@ pages = [
   'blog-page',
   'auto-close',
 	'local',
-	'turner-drives',
+	'alset',
 	'reloaded'
 ]
 
