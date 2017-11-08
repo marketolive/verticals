@@ -94,7 +94,7 @@ def favicon():
 @app.route('/<page>')
 def main_router(page):
 	if page in pages:
-		return render_template(page + '.html')
+		return render_template(page + '.html', vert = page)
 	elif page in verticals:
 		return redirect('/microsite/' + page)
 
@@ -164,6 +164,8 @@ def ad_router(ad_network, vertical):
 			return redirect(facebook_ad_domain + '&title=Energy+Efficient+Windows' + '&link=' + microsite_link + '&linkText=turner-mfg.com%2Fenergy-efficient-windows' + '&text=Save+energy+%26+beautify+your+home+with+custom+replacement+windows+from+Turner' + '&image=' + vertical_img + '-facebook-ad.jpg')
 		elif vertical == 'travel-and-leisure':
 			return redirect(facebook_ad_domain + '&title=Take+a+Journey+with+Us' + '&link=' + microsite_link + '&linkText=turner-travels.com%2Fjourney' + '&text=Doing+nothing+can+be+something' + '&image=' + vertical_img + '-facebook-ad.jpg')
+		elif vertical == 'alset':
+			return redirect(facebook_ad_domain + '&title=' + quote_plus('Test Drive the all new Model N') + '&link=' + microsite_link + '&linkText=' + quote_plus('alset.com/model-n') + '&text=' + quote_plus('Schedule a Test Drive Today') + '&image=' + vertical_img + '-facebook-ad.jpg')
 	elif ad_network == 'google':
 		if vertical == 'technology':
 			return redirect(economist_ad_domain + '&title=Efficient+Cloud+Solution+for+Travel+Industry' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
@@ -177,5 +179,7 @@ def ad_router(ad_network, vertical):
 			return redirect(economist_ad_domain + '&title=Energy+Efficient+Windows+By+Turner' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
 		elif vertical == 'travel-and-leisure':
 			return redirect(economist_ad_domain + '&title=Take+a+Journey+with+Turner+Travels' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
+		elif vertical == 'alset':
+			return redirect(economist_ad_domain + '&title=' + quote_plus('Test Drive the all new Model N') + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
 	else:
 		abort(404)
