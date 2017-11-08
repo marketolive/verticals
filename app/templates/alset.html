@@ -66,13 +66,13 @@
               </a>
               </li> -->
             <li class="nav-item active">
-              <a class="nav-link">Model A<span class="sr-only">(current)</span></a>
+              <a class="nav-link">Model N<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">Model B</a>
+              <a class="nav-link">Model Y</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">Model C</a>
+              <a class="nav-link">Model Z</a>
             </li>
             <li class="nav-item">
               <a class="nav-link">Test Drive</a>
@@ -148,7 +148,7 @@
       <div class="carousel-inner" role="listbox">
         <!--First slide-->
         <div style="z-index: 0; height: 100%; background-color: rgba(17, 17, 17, 1);">
-          <div id="rtp-replace" class="carousel-item active" style="background-image: url('https://www.tesla.com/tesla_theme/assets/img/models/v1.0/slideshow/Rear_Detail-1440.jpg?20171005'); background-size: cover; overflow: hidden; opacity: 0.667;"></div>
+          <div id="rtp-replace" class="carousel-item active" style="background-image: url('https://www.tesla.com/tesla_theme/assets/img/modelx/slideshow/Rim_Detail-1440.jpg?20170907'); background-size: cover; overflow: hidden; opacity: 0.667;"></div>
           <div style="z-index: 1; position: relative; top: -95%; height: 100%;">
             <div class="flex-center animated transformDown">
               <ul>
@@ -171,6 +171,34 @@
     {% block page_content %}
     <!--Content-->
     <div class="container">
+      <aside id="mk-sidebar" class="mk-builtin">
+        <div class="sidebar-wrapper">
+          <style>
+            .RTP_RCMD2 {
+            line-height: normal !important;
+            }
+            .RTP_RCMD2 [data-rtp-id="rtp_rcmd2_tpl_2"] .rtp_rcmd2_img_container {
+            height: 100% !important;
+            }
+          </style>
+          <div class="RTP_RCMD2" data-rtp-template-id="template1"></div>
+          <script type="text/javascript">
+            rtp('set', 'rcmd', 'richmedia', 'template1', {
+              "rcmd.general.font.family": "Roboto, sans-serif",
+              "rcmd.content.background.color": "white",
+              "rcmd.title.text": "Recommended for You",
+              "rcmd.title.background.color": "#4686f1",
+              "rcmd.title.font.size": "1.25rem",
+              "rcmd.title.font.color": "white",
+              "rcmd.description.font.color": "#373a3c",
+              "rcmd.cta.background.color": "#4686f1",
+              "rcmd.cta.font.color": "white",
+              "rcmd.cta.text": "Learn More"
+            });
+            rtp('get', 'rcmd', 'richmedia');
+          </script>
+        </div>
+      </aside>
       <div class="row">
         <!--First columnn-->
         <div class="col-md-4">
@@ -187,7 +215,7 @@
             <!--Card content-->
             <div class="card-block">
               <!--Title-->
-              <h4 class="card-title">Model A</h4>
+              <h4 class="card-title">Model N</h4>
               <!--Text-->
               <p class="card-text">The safest, quickest, and most capable sport utility vehicle in history.</p>
               <a href="#" class="btn btn-primary">Custom Order</a>
@@ -212,7 +240,7 @@
             <!--Card content-->
             <div class="card-block">
               <!--Title-->
-              <h4 class="card-title">Model B</h4>
+              <h4 class="card-title">Model Y</h4>
               <!--Text-->
               <p class="card-text">Designed from the ground up to be the safest, most exhilarating sedan ever.</p>
               <a href="#" class="btn btn-primary">Custom Order</a>
@@ -237,7 +265,7 @@
             <!--Card content-->
             <div class="card-block">
               <!--Title-->
-              <h4 class="card-title">Model C</h4>
+              <h4 class="card-title">Model Z</h4>
               <!--Text-->
               <p class="card-text">Achieves 220 miles of range while starting at only $35,000 before incentives.</p>
               <a href="#" class="btn btn-primary">Custom Order</a>
@@ -248,34 +276,6 @@
         </div>
         <!--Third columnn-->
       </div>
-      <aside id="mk-sidebar" class="mk-builtin">
-        <div class="sidebar-wrapper">
-          <style>
-            .RTP_RCMD2 {
-            line-height: normal !important;
-            }
-            .RTP_RCMD2 [data-rtp-id="rtp_rcmd2_tpl_2"] .rtp_rcmd2_img_container {
-            height: 100% !important;
-            }
-          </style>
-          <div class="RTP_RCMD2" data-rtp-template-id="template1"></div>
-          <script type="text/javascript">
-            rtp('set', 'rcmd', 'richmedia', 'template1', {
-              "rcmd.general.font.family": "Roboto, sans-serif",
-              "rcmd.content.background.color": "white",
-              "rcmd.title.text": "Predictive Content",
-              "rcmd.title.background.color": "#4686f1",
-              "rcmd.title.font.size": "1.25rem",
-              "rcmd.title.font.color": "white",
-              "rcmd.description.font.color": "#373a3c",
-              "rcmd.cta.background.color": "#4686f1",
-              "rcmd.cta.font.color": "white",
-              "rcmd.cta.text": "Learn More"
-            });
-            rtp('get', 'rcmd', 'richmedia');
-          </script>
-        </div>
-      </aside>
     </div>
     <!--/.Content-->
     {% endblock %}		        
