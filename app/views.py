@@ -162,6 +162,8 @@ def ad_router(ad_network, vertical):
 			return redirect(facebook_ad_domain + '&title=Turner+University' + '&link=' + microsite_link  + '&linkText=turner-university.com%2Frankings' + '&text=The+Leading+Public+University' + '&image=' + vertical_img + '-facebook-ad.png')
 		elif vertical == 'manufacturing':
 			return redirect(facebook_ad_domain + '&title=Energy+Efficient+Windows' + '&link=' + microsite_link + '&linkText=turner-mfg.com%2Fenergy-efficient-windows' + '&text=Save+energy+%26+beautify+your+home+with+custom+replacement+windows+from+Turner' + '&image=' + vertical_img + '-facebook-ad.jpg')
+		elif vertical == 'sports':
+			return redirect(facebook_ad_domain + '&title=' + quote_plus('Show Your True Colors with Turner Sports') + '&link=' + microsite_link + '&linkText=' + quote_plus('turner-sports.com/true-colors') + '&text=' + quote_plus('Merchandise by Sports Fans for Sports Fans') + '&image=' + vertical_img + '-facebook-ad.jpg')
 		elif vertical == 'travel-and-leisure':
 			return redirect(facebook_ad_domain + '&title=Take+a+Journey+with+Us' + '&link=' + microsite_link + '&linkText=turner-travels.com%2Fjourney' + '&text=Doing+nothing+can+be+something' + '&image=' + vertical_img + '-facebook-ad.jpg')
 		elif vertical == 'alset':
@@ -177,6 +179,8 @@ def ad_router(ad_network, vertical):
 			return redirect(economist_ad_domain + '&title=Turner+University' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.png')
 		elif vertical == 'manufacturing':
 			return redirect(economist_ad_domain + '&title=Energy+Efficient+Windows+By+Turner' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
+		elif vertical == 'sports':
+			return redirect(economist_ad_domain + '&title=' + quote_plus('Show Your True Colors with Turner Sports') + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
 		elif vertical == 'travel-and-leisure':
 			return redirect(economist_ad_domain + '&title=Take+a+Journey+with+Turner+Travels' + '&link=' + microsite_link + '&image=' + vertical_img + '-economist-ad.jpg')
 		elif vertical == 'alset':
