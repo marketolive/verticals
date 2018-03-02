@@ -95,7 +95,7 @@ def favicon():
 @app.route('/<page>')
 def main_router(page):
 	if page in pages:
-		return render_template(page + '.html', vert = page)
+		return render_template(page + '.html', vert=page)
 	elif page in verticals:
 		return redirect('/microsite/' + page)
 
