@@ -241,7 +241,7 @@ function submitLeadData() {
               if (userId) {
                 email = demoMailBox + userId + "@gmail.com";
               } else {
-                email = "predictive.convert";
+                email = "predictive.convert@gmail.com";
               }
               
               form.vals({
