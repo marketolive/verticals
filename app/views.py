@@ -22,6 +22,7 @@ verticals = [
 	'retail-banking',
 	'sports',
 	'technology',
+	'technology2',
 	'telecommunications',
 	'travel-and-leisure'
 ]
