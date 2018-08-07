@@ -42,60 +42,6 @@
               <a class="nav-link">Resources</a>
             </li>
           </ul>
-          <ul class="nav navbar-nav nav-flex-icons">
-            <li class="nav-item btn-group">
-              <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Web Content</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <a class="dropdown-item" href="{{vert}}">Default</a>
-                <a class="dropdown-item" href="?display=personalized">Personalized</a>
-                <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Display</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="?display=form">Form</a>
-                <a class="dropdown-item" href="?display=dialog">Dialog</a>
-                <a class="dropdown-item" href="?display=widget">Widget</a>
-                <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Predictive Content</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="?predictive-content=bar">Web Bar</a>
-                <a class="dropdown-item" href="?predictive-content=rich-media">Rich Media</a>
-              </div>
-            </li>
-            <li class="nav-item btn-group">
-              <a class="nav-link dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ad Retargeting</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <a class="dropdown-item" href="/ad-retargeting/google/{{vert}}" target="_blank">Google</a>
-                <a class="dropdown-item" href="/ad-retargeting/facebook/{{vert}}" target="_blank">Facebook</a>
-              </div>
-            </li>
-            <li class="nav-item btn-group">
-              <a class="nav-link dropdown-toggle" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Locale</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
-                <a class="dropdown-item" href="/local?country=au">Australia</a>
-                <a class="dropdown-item" href="/local?country=ca">Canada</a>
-                <a class="dropdown-item" href="/local?country=fr">France</a>
-                <a class="dropdown-item" href="/local?country=de">Germany</a>
-                <a class="dropdown-item" href="/local?country=jp">Japan</a>
-                <a class="dropdown-item" href="/local?country=uk">United Kingdom</a>
-                <a class="dropdown-item" href="/local?country=us">United States</a>
-              </div>
-            </li>
-            <li class="nav-item btn-group">
-              <a class="nav-link dropdown-toggle" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Verticals</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenu4">
-                <a class="dropdown-item" href="asset-management">Asset Management</a>
-                <a class="dropdown-item" href="healthcare">Healthcare</a>
-                <a class="dropdown-item" href="higher-education">Higher Education</a>
-                <a class="dropdown-item" href="manufacturing">Manufacturing</a>
-                <a class="dropdown-item" href="mobile-provider">Mobile Provider</a>
-                <a class="dropdown-item" href="retail-banking">Retail Banking</a>
-                <a class="dropdown-item" href="sports">Sports</a>
-                <a class="dropdown-item" href="technology">Technology</a>
-                <a class="dropdown-item" href="telecommunications">Telecommunications</a>
-                <a class="dropdown-item" href="travel-and-leisure">Travel &amp; Leisure</a>
-              </div>
-            </li>
-          </ul>
         </div>
         <!--/.Collapse content-->
       </div>
@@ -107,22 +53,24 @@
     <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel">
       <!--Slides-->
       <div class="carousel-inner" role="listbox">
-        <!--First slide-->
-        <div style="z-index: 0; height: 100%; background-color: rgba(17, 17, 17, 1);">
-          <div id="rtp-replace" class="carousel-item active" style="background-image: url('/static/img/tech_hero.jpg'); background-size: cover; overflow: hidden; opacity: 0.667;"></div>
-          <div style="z-index: 1; position: relative; top: -95%; height: 100%;">
-            <div class="flex-center animated transformDown">
-              <ul>
-                <li>
-                  <h1 class="h1-responsive">Enterprise Grade Cloud Solutions</h1>
-                </li>
-                <li>
-                  <a class="btn btn-default btn-lg bg-primary" href="?display=personalized">Learn More</a>
-                </li>
-              </ul>
+          <!--First slide-->
+        <!-- NEW-CONTENT changed height on below div to 98% from 100% -->
+        <div style="z-index: 0; height: 98%; background-color: rgba(17, 17, 17, 1);">
+            <div id="rtp-replace" class="carousel-item active" style="background-image: url('/static/img/tech_hero.jpg'); background-size: cover; overflow: hidden; opacity: 0.667;"></div>
+            <div style="z-index: 1; position: relative; top: -95%; height: 100%;">
+              <div class="flex-center animated transformDown">
+                <ul>
+                  <li>
+                    <h1 class="h1-responsive">Enterprise Grade Cloud Solutions</h1>
+                  </li>
+                  <li>
+                    <a class="btn btn-default btn-lg bg-primary" href="?display=personalized">Learn More</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+      
         <!--/.First slide-->
       </div>
       <!--/.Slides-->
@@ -132,7 +80,17 @@
     {% block page_content %}
     <!--Content-->
     <div class="container">
-      <div class="row">
+      <!-- NEW-CONTENT: icon holder -->
+    <div class="icon-wrapper">
+      <div class="icon-clickable-container">
+          <i class="fas fa-building icon-click-to-change active" value="building"></i>
+          <i class="fas fa-clipboard-list icon-click-to-change" value="list"></i>
+          <i class="fas fa-user-circle icon-click-to-change" value="head"></i>
+      </div>
+    </div>
+
+    <!-- start -->
+    <div class="row" data-section-val="building">
         <!--First columnn-->
         <div class="col-md-4">
           <!--Card-->
@@ -148,9 +106,9 @@
             <!--Card content-->
             <div class="card-block">
               <!--Title-->
-              <h4 class="card-title">What is Hybrid Cloud?</h4>
+              <h4 class="card-title">Data Protection and HIPPA</h4>
               <!--Text-->
-              <p class="card-text">Hybrid Cloud : All the perks of private datacenter with scalability of the cloud</p>
+              <p class="card-text">Healthcare Security: Understanding HIPAA Compliance and its Role in Patient Data Protection.</p>
               <a href="#" class="btn btn-primary">Learn more</a>
             </div>
             <!--/.Card content-->
@@ -173,10 +131,10 @@
             <!--Card content-->
             <div class="card-block">
               <!--Title-->
-              <h4 class="card-title">Instant Data Protection</h4>
+              <h4 class="card-title">Scripps Hospital</h4>
               <!--Text-->
-              <p class="card-text">Check out how Turner Technologies rescued Ace Media’s data with a Hybrid Cloud Backup.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
+              <p class="card-text">See how Scripps Hospital protects patient data from breach.</p>
+              <a href="#" class="btn btn-primary">Download</a>
             </div>
             <!--/.Card content-->
           </div>
@@ -198,10 +156,10 @@
             <!--Card content-->
             <div class="card-block">
               <!--Title-->
-              <h4 class="card-title">Industry Case Study</h4>
+              <h4 class="card-title">Data Protection at BCH</h4>
               <!--Text-->
-              <p class="card-text">See how our Cloud Solutions are helping our Financial Customers achieve Data Compliance requirements.</p>
-              <a href="#" class="btn btn-primary">Watch Video</a>
+              <p class="card-text">Hear Dan Nigrin, CIO, Boston Children’s Hospital discuss the data protection best practices.</p>
+              <a href="#" class="btn btn-primary">Listen Now</a>
             </div>
             <!--/.Card content-->
           </div>
@@ -209,6 +167,169 @@
         </div>
         <!--Third columnn-->
       </div>
+
+      <!-- Second Set of tiles -->
+
+      <div class="row" data-section-val="list" style="display: none;">
+        <!--First columnn-->
+        <div class="col-md-4">
+          <!--Card-->
+          <div class="card">
+            <!--Card image-->
+            <div class="view overlay hm-white-slight">
+              <img src="/static/img/tech_card4.jpg" class="img-fluid" alt="">
+              <a href="#">
+                <div class="mask"></div>
+              </a>
+            </div>
+            <!--/.Card image-->
+            <!--Card content-->
+            <div class="card-block">
+              <!--Title-->
+              <h4 class="card-title">8 of Top 10 Use Turner</h4>
+              <!--Text-->
+              <p class="card-text">The Fortune 500 uses Turner Threat Protection to keep data safe.</p>
+              <a href="#" class="btn btn-primary">Read Now</a>
+            </div>
+            <!--/.Card content-->
+          </div>
+          <!--/.Card-->
+        </div>
+        <!--First columnn-->
+        <!--Second columnn-->
+        <div class="col-md-4">
+          <!--Card-->
+          <div class="card">
+            <!--Card image-->
+            <div class="view overlay hm-white-slight">
+              <img src="/static/img/tech_card5.jpg" class="img-fluid" alt="">
+              <a href="#">
+                <div class="mask"></div>
+              </a>
+            </div>
+            <!--/.Card image-->
+            <!--Card content-->
+            <div class="card-block">
+              <!--Title-->
+              <h4 class="card-title">Data Prevention for Manufacturing</h4>
+              <!--Text-->
+              <p class="card-text">Stop IP theft. Protect designs, formulas, business processes, costing, source code and more.</p>
+              <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+            <!--/.Card content-->
+          </div>
+          <!--/.Card-->
+        </div>
+        <!--Second columnn-->
+        <!--Third columnn-->
+        <div class="col-md-4">
+          <!--Card-->
+          <div class="card">
+            <!--Card image-->
+            <div class="view overlay hm-white-slight">
+              <img src="/static/img/tech_card6.jpg" class="img-fluid" alt="">
+              <a href="#">
+                <div class="mask"></div>
+              </a>
+            </div>
+            <!--/.Card image-->
+            <!--Card content-->
+            <div class="card-block">
+              <!--Title-->
+              <h4 class="card-title">Data Protection at Boeing</h4>
+              <!--Text-->
+              <p class="card-text">Hear Ted Colbert, CIO of Boeing, as he discusses data loss prevention.</p>
+              <a href="#" class="btn btn-primary">Listen Now</a>
+            </div>
+            <!--/.Card content-->
+          </div>
+          <!--/.Card-->
+        </div>
+        <!--Third columnn-->
+      </div>
+
+      <!-- Third set of tiles -->
+
+      <div class="row" data-section-val="head" style="display: none;">
+        <!--First columnn-->
+        <div class="col-md-4">
+          <!--Card-->
+          <div class="card">
+            <!--Card image-->
+            <div class="view overlay hm-white-slight">
+              <img src="/static/img/tech_card7.jpg" class="img-fluid" alt="">
+              <a href="#">
+                <div class="mask"></div>
+              </a>
+            </div>
+            <!--/.Card image-->
+            <!--Card content-->
+            <div class="card-block">
+              <!--Title-->
+              <h4 class="card-title">Office 365 Email Protection</h4>
+              <!--Text-->
+              <p class="card-text">Protect your email, files, and Office 365 applications against unknown and sophisticated attacks.</p>
+              <a href="#" class="btn btn-primary">Read Now</a>
+            </div>
+            <!--/.Card content-->
+          </div>
+          <!--/.Card-->
+        </div>
+        <!--First columnn-->
+        <!--Second columnn-->
+        <div class="col-md-4">
+          <!--Card-->
+          <div class="card">
+            <!--Card image-->
+            <div class="view overlay hm-white-slight">
+              <img src="/static/img/tech_card8.jpg" class="img-fluid" alt="">
+              <a href="#">
+                <div class="mask"></div>
+              </a>
+            </div>
+            <!--/.Card image-->
+            <!--Card content-->
+            <div class="card-block">
+              <!--Title-->
+              <h4 class="card-title">Enterprise Threat Protector (ETP)</h4>
+              <!--Text-->
+              <p class="card-text">Become proactive and mitigate targeted threats.</p>
+              <a href="#" class="btn btn-primary">Read Now</a>
+            </div>
+            <!--/.Card content-->
+          </div>
+          <!--/.Card-->
+        </div>
+        <!--Second columnn-->
+        <!--Third columnn-->
+        <div class="col-md-4">
+          <!--Card-->
+          <div class="card">
+            <!--Card image-->
+            <div class="view overlay hm-white-slight">
+              <img src="/static/img/tech_card9.jpg" class="img-fluid" alt="">
+              <a href="#">
+                <div class="mask"></div>
+              </a>
+            </div>
+            <!--/.Card image-->
+            <!--Card content-->
+            <div class="card-block">
+              <!--Title-->
+              <h4 class="card-title">Seamless Security</h4>
+              <!--Text-->
+              <p class="card-text">Integrate your approach with a unified platform to discover and remediate vulnerabilities.</p>
+              <a href="#" class="btn btn-primary">Read Now</a>
+            </div>
+            <!--/.Card content-->
+          </div>
+          <!--/.Card-->
+        </div>
+        <!--Third columnn-->
+      </div>
+
+    <!-- end -->
+
       <aside id="mk-sidebar" class="mk-builtin">
         <div class="sidebar-wrapper">
           <style>
@@ -237,6 +358,7 @@
         </div>
       </aside>
     </div>
+
     <!--/.Content-->
     {% endblock %}		        
   </body>
