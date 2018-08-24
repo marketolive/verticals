@@ -62,7 +62,8 @@ pages = [
   'auto-close',
 	'local',
 	'alset',
-	'reloaded'
+	'reloaded',
+	'demo'
 ]
 
 @app.route('/js/<path:file_name>')
