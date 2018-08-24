@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    
+
+    
+    <!-- Base CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/base.css">
+    <!-- JQuery -->
+    <script type="text/javascript" src="/js/jquery-2.2.3.min.js"></script>
+
+    <title>Golds Gym</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://www.goldsgym.com/assets/dist/css/theme-5f1519b752.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript">
+      $(document).ready(function(){console.log('ready');
+        $('body').scroll(function() {
+          if($('body').scrollTop() == 0){
+            $("#banner").removeClass('navigation-fixed-bg nav-shadow');
+            $("#logo").addClass('opacity-0p');
+          }
+          else{
+            $("#banner").addClass('navigation-fixed-bg nav-shadow');
+            $("#logo").removeClass('opacity-0p');
+          }
+        });
+      });
+    </script>
+    <!-- Marketo Munchkin Tag -->
+    <script type="text/javascript">
+      (function() {
+        var didInit = false;
+        function initMunchkin() {
+          if(didInit === false) {
+            didInit = true;
+            Munchkin.init('150-BOA-282');
+          }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+          if (this.readyState == 'complete' || this.readyState == 'loaded') {
+            initMunchkin();
+          }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+      })();
+    </script>
+
+    <!-- Web Personalization Tag -->
+    <script type="text/javascript">
+      (function (c, h, a, f, i, e) {
+          c[a] = c[a] || function () {
+              (c[a].q = c[a].q || []).push(arguments)
+          };
+          c[a].a = i;
+          c[a].e = e;
+          var g = h.createElement("script");
+          g.async = true;
+          g.type = "text/javascript";
+          g.src = f + '?aid=' + i;
+          var b = h.getElementsByTagName("script")[0];
+          b.parentNode.insertBefore(g, b);
+          console.log("Web Personalization Tag Loaded");
+      })(window, document, "rtp", "https://sjrtp3-cdn.marketo.com/rtp-api/v1/rtp.js", "mktodemoaccount374");
+      
+      rtp('send', 'view');
+      rtp('get', 'campaign', true);
+    </script>
+  </head>
+  <body>
+    <script>
+      let getUrlParam = function (param) {
+        console.log('Getting: URL Parameter: ' + param);
+        
+        var paramString = window.location.href.split('?')[1];
+        
+        if (paramString) {
+          var params = paramString.split('&'),
+          paramPair,
+          paramName,
+          paramValue;
+          
+          for (var ii = 0; ii < params.length; ii++) {
+            paramPair = params[ii].split('=');
+            paramName = paramPair[0];
+            paramValue = paramPair[1];
+            
+            if (paramName == param) {
+              console.log('URL Parameter: ' + paramName + ' = ' + paramValue);
+              return paramValue;
+            }
+          }
+        }
+        return '';
+      };
+      
+      document.addEventListener('readystatechange', function () {
+        if (document.readyState == 'complete') {
+          //let country = getUrlParam('country'),
+          let predictiveContent = getUrlParam('predictive-content');
+          switch (predictiveContent) {
+          case 'rich-media':
+          case 'bar':
+            window.setTimeout(function () {
+              window.scrollTo(0, document.body.scrollHeight);
+            }, 500);
+            break;
+          }
+        }
+      });
+    </script>
+    {% block navbar %}
+    <div id="banner" class="main-navigation-container navbar ng-scope" style="" role="banner">
+      <div class="section">
+        <div class="container">
+          <div class="content">
+            <nav class="main-navigation" role="navigation">
+              <div class="row">
+                <div class="col col-1 col-lg-1">
+                                      <a href="/">
+                      <img id="logo" style="box-shadow:none;" class="navigation-logo brand-navigation-logo opacity-0p" src="https://www.goldsgym.com/assets/dist/img/logo/notext/gray.svg" alt="Gold's Gym Logo">
+                    </a>
+                                  </div>
+                <div class="col col-9 col-lg-9 text-center">
+                  
+                  <div class="row">
+                                          <div class="pt3"></div>
+                                        <ul class="main-navigation-items m0 p0 pl5 nowrap display-inline-block">
+                      <!-- nav menu items -->
+                                                                        <li class="main-navigation-item pt1  brand-item">
+                            <a href="https://www.goldsgym.com/locate-a-gym">Locations</a>
+                          </li>
+                                                                                                <li class="main-navigation-item pt1  brand-item">
+                            <a href="https://www.goldsgym.com/member-experience">Member Experience</a>
+                          </li>
+                                                                                                <li class="main-navigation-item pt1  brand-item">
+                            <a href="https://www.goldsgym.com/golds-gym-fitness-experience">Fitness Experience</a>
+                          </li>
+                                                                                                <li class="main-navigation-item pt1  brand-item">
+                            <a href="https://www.goldsgym.com/blog">Blog</a>
+                          </li>
+                                              
+                                              <li class="main-navigation-item pt1 mnl2 brand-item" style="padding-right: 0;">
+                          <a href="http://mypath.goldsgym.com/" target="_blank"><i style="font-size:14px;" class="icon material-icons lock mr1">lock</i> MEMBER CENTER</a>
+                        </li>
+                      
+                                          </ul>
+                  </div>
+                </div>
+                <div class="col col-2 col-lg-2">
+                  
+                  <div class="row pt3">
+                    <div class="col col-12 col-lg-12 nowrap" oc-lazy-load="['https://www.goldsgym.com/assets/dist/js/geoLocator-e353934c4f9951b83bbe.js', 'https://www.goldsgym.com/assets/dist/js/leadForm-8096367e78bbf07e2de4.js']">
+                                              <a class="pr2 no-underline ng-scope" href="/ilg/free-pass" target="_blank">
+                          <button class="button button-primary cta-navigation-text m0 free-pass">FREE PASS</button>
+                        </a>
+                        <a href="/golds-gym-membership-options" target="_blank" class="ng-scope">
+                          <button class="button button-secondary cta-navigation-text m0 color-white join-now">JOIN NOW</button>
+                        </a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %} 
+    {% block carousel_content %}
+    <!--Carousel Wrapper-->
+    <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel">
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+        <!--First slide-->
+        <div style="z-index: 0; height: 100%;">
+          <div id="rtp-replace" class="carousel-item active" style="background-image: url('https://www.goldsgym.com/wp-content/uploads/sites/1/2018/07/the-new-golds-gym-2-8.jpg'); background-size: cover; overflow: hidden; opacity:1; "></div>
+          <div style="z-index: 1; position: relative; top: -95%; height: 100%;">
+            <div class="text-center hero-content brand-hero-content hero-desktop-center hero-mobile-left py-5p">
+                  <img class="hero-content-logo hero-right-logo pb3" alt="Gold's Gym Logo" src="https://www.goldsgym.com/assets/dist/img/logo/notext/gray.svg">
+        
+        <h2 class="h1 hero-title font-bold pb2">WE PROMISE TO:</h2>
+
+        <div class="width-4 hero-description mt3 font-light mb3"></div>
+
+                                      <h3>
+              <a href="/member-experience/" class="h2 font-regular no-underline cursor-pointer hero-text-link blue-hover uppercase">Help you find your starting point</a>
+            </h3>
+                                        <h3>
+              <a href="/member-experience/" class="h2 font-regular no-underline cursor-pointer hero-text-link blue-hover uppercase">Build your path to success</a>
+            </h3>
+                                        <h3>
+              <a href="/member-experience/" class="h2 font-regular no-underline cursor-pointer hero-text-link blue-hover uppercase">Show you the ropes</a>
+            </h3>
+                                        <h3>
+              <a href="/member-experience/" class="h2 font-regular no-underline cursor-pointer hero-text-link blue-hover uppercase">Be with you every step of the way</a>
+            </h3>
+                                        <h3>
+              <a href="/member-experience/" class="h2 font-regular no-underline cursor-pointer hero-text-link blue-hover uppercase">Guarantee Satisfaction</a>
+            </h3>
+                        </div>
+          </div>
+        </div>
+        <!--/.First slide-->
+      </div>
+      <!--/.Slides-->
+    </div>
+    <!--/.Carousel Wrapper-->
+    {% endblock %}
+    {% block page_content %}
+    <!--Content-->
+    <div style="margin:50px; 0">
+      <div class="">
+        <!--First columnn-->
+        <div class="slick-slide slick-active" data-slick-index="0" aria-hidden="false" style="width: 32%;display:block;"><div><div class="col col-4 col-lg-4 col-sm-12 px4 ng-scope" style="width: 100%; display: inline-block;">
+                      <div class="tile"><a href="/blog/create-healthy-plate/" tabindex="0"><div id="rtp-replace-card1" class="tile-image bg-cover bg-c-c" style="background-image:url('https://www.goldsgym.com/wp-content/uploads/sites/1/2018/03/iStock-656873394_596.jpg')"></div></a><div class="content"><div class="content-wrapper"><a class="color-gray-1" href="/blog/create-healthy-plate/" tabindex="0"><div class="font-size-lg py2 font-bold">
+            How to Create the Perfect Healthy Plate
+          </div></a><div class="tile-preview overflow-hidden"><p>If you’re still using the traditional food pyramid as a guide to eating, then the foundation of your diet is grains. They’re important, but grains…</p></div><a class="no-underline font-bold" href="/blog/create-healthy-plate/" tabindex="0">READ MORE</a></div></div></div>                  </div></div></div>
+        <!--First columnn-->
+        <!--Second columnn-->
+        <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 32%;display:block;"><div><div class="col col-4 col-lg-4 col-sm-12 px4 ng-scope" style="width: 100%; display: inline-block;">
+                      <div class="tile"><a href="/blog/chelsea-martin-2017-challenge-winner/" tabindex="0"><div id="rtp-replace-card2" class="tile-image bg-cover bg-c-c" style="background-image:url('https://www.goldsgym.com/wp-content/uploads/sites/1/2017/12/chelsea-1.jpg')"></div></a><div class="content"><div class="content-wrapper"><a class="color-gray-1" href="/blog/chelsea-martin-2017-challenge-winner/" tabindex="0"><div class="font-size-lg py2 font-bold">
+            At Gold’s Gym, She’s Home
+          </div></a><div class="tile-preview overflow-hidden"><p>In 2016 at the age of 23, Chelsea Martin left her life in Wisconsin and moved to Colorado to start her nursing career. She was…</p></div><a class="no-underline font-bold" href="/blog/chelsea-martin-2017-challenge-winner/" tabindex="0">READ MORE</a></div></div></div>                  </div></div></div>
+        <!--Second columnn-->
+        <!--Third columnn-->
+        <div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 32%;display:block;"><div><div class="col col-4 col-lg-4 col-sm-12 px4 ng-scope" style="width: 100%; display: inline-block;">
+                      <div class="tile"><a href="/blog/sore-workout-whats-natural/" tabindex="0"><div id="rtp-replace-card3" class="tile-image bg-cover bg-c-c" style="background-image:url('https://www.goldsgym.com/wp-content/uploads/sites/1/2018/07/iStock-690819402_crop.jpg')"></div></a><div class="content"><div class="content-wrapper"><a class="color-gray-1" href="/blog/sore-workout-whats-natural/" tabindex="0"><div class="font-size-lg py2 font-bold">
+            Sore After a Workout? What’s Natural — and Not
+          </div></a><div class="tile-preview overflow-hidden"><p>Post-workout soreness can be the result of trying a new activity or increasing the overall intensity level of exercise. It’s a message from your body…</p></div><a class="no-underline font-bold" href="/blog/sore-workout-whats-natural/" tabindex="0">READ MORE</a></div></div></div>                  </div></div></div>
+        <!--Third columnn-->
+      </div>
+    </div>
+    <div class="">
+      <div class="ng-scope">
+        <div class="width-50p col-right">
+          <iframe style="width: 42vw; height: 25vw; margin: 2vw 5vw 2vw 2.5vw;" src="https://www.youtube.com/embed/aOm-Qw-1_ec?rel=0" frameborder="0" allowfullscreen=""></iframe>
+        </div>
+        <div class="width-50p col">
+          <div style="height: 25vw; margin: 2vw 2.5vw 2vw 2.5vw;" class="display-table">
+            <div class="display-table-cell align-middle text-center font-condensed">
+              <h2 style="font-size: 2.3vw;" class="mb3 line-height-2 uppercase font-bold">We pioneered the industry in 1965. Now we're redefining it.</h2>
+              <div style="font-size: 1.6vw;" class="mx4 mb3">Through personalization and innovation, we've evolved so that you can transform your life.</div>
+              <a href="https://www.goldsgym.com/experience-change-video-transcript/" style="font-size: 1.4vw;" class="no-underline font-bold">View Video Transcript</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!--/.Content-->
+    <div>
+      
+      <aside id="mk-sidebar" class="mk-builtin">
+        <div class="sidebar-wrapper">
+          <style>
+            .RTP_RCMD2 {
+            line-height: normal !important;
+            }
+            .RTP_RCMD2 [data-rtp-id="rtp_rcmd2_tpl_2"] .rtp_rcmd2_img_container {
+            height: 100% !important;
+            }
+          </style>
+          <div class="RTP_RCMD2" data-rtp-template-id="template1"></div>
+          <script type="text/javascript">// 
+            rtp('set', 'rcmd', 'richmedia','template1',
+            {
+                "rcmd.title.text" : "",
+                "rcmd.cta.text" : "Read More →",
+                "rcmd.title.background.color" : "#4285F4",
+                "rcmd.title.font.color" : "white",
+                "rcmd.content.background.color" :"#E2E2E2",
+                "rcmd.cta.background.color" : "#2BBBAD",
+                "category": ["Technology"]
+            }
+            );
+            rtp('get','rcmd', 'richmedia');
+          </script> 
+        </div>
+      </aside>
+
+    </div>
+    {% endblock %}		        
+  </body>
+</html>

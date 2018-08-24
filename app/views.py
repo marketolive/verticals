@@ -61,7 +61,8 @@ pages = [
   'blog-page',
   'auto-close',
 	'local',
-	'alset'
+	'alset',
+	'demo'
 ]
 
 @app.route('/js/<path:file_name>')
