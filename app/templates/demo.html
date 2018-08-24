@@ -61,26 +61,17 @@
       })();
     </script>
 
-    <!-- Web Personalization Tag -->
-    <script type="text/javascript">
-      (function (c, h, a, f, i, e) {
-          c[a] = c[a] || function () {
-              (c[a].q = c[a].q || []).push(arguments)
-          };
-          c[a].a = i;
-          c[a].e = e;
-          var g = h.createElement("script");
-          g.async = true;
-          g.type = "text/javascript";
-          g.src = f + '?aid=' + i;
-          var b = h.getElementsByTagName("script")[0];
-          b.parentNode.insertBefore(g, b);
-          console.log("Web Personalization Tag Loaded");
-      })(window, document, "rtp", "https://sjrtp3-cdn.marketo.com/rtp-api/v1/rtp.js", "mktodemoaccount374");
-      
-      rtp('send', 'view');
-      rtp('get', 'campaign', true);
+    <!-- RTP tag --> 
+    <script type='text/javascript'>
+      (function(c,h,a,f,i,e){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+       c[a].a=i;c[a].e=e;var g=h.createElement("script");g.async=true;g.type="text/javascript";
+       g.src=f+'?aid='+i;var b=h.getElementsByTagName("script")[0];b.parentNode.insertBefore(g,b);
+       })(window,document,"rtp","//sjrtp8-cdn.marketo.com/rtp-api/v1/rtp.js","mktodemoaccount374");
+       
+      rtp('send','view');
+      rtp('get', 'campaign',true);
     </script>
+    <!-- End of RTP tag -->
   </head>
   <body>
     <script>
@@ -267,7 +258,7 @@
     <!--/.Content-->
     <div>
       
-      <aside id="mk-sidebar" class="mk-builtin">
+  <!--    <aside id="mk-sidebar" class="mk-builtin">
         <div class="sidebar-wrapper">
           <style>
             .RTP_RCMD2 {
@@ -293,7 +284,7 @@
             rtp('get','rcmd', 'richmedia');
           </script> 
         </div>
-      </aside>
+      </aside>. -->
 
     </div>
     {% endblock %}		        
