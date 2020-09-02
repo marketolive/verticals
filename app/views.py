@@ -62,6 +62,7 @@ pages = [
   'auto-close',
 	'local',
 	'alset',
+	'reloaded',
 	'demo'
 ]
 
